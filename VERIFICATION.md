@@ -7,7 +7,7 @@ Checked on 1 October 2026.
 - Built with Jekyll **3.10.0**, the version listed by GitHub Pages, with no custom plugins. This machine used an isolated local Ruby dependency environment; the supplied Gemfile selects the supported `github-pages` **232** dependency set.
 - Both account-root (`baseurl: ""`) and project-repository (`baseurl: "/portfolio"`) builds pass. All **24 HTML pages** have working local links, asset paths, and fragment targets.
 - Ten top-level pages, five project details, four research details, four education project details, and the 404 page are generated. Turbo Compressor shares one detail page across Projects and Education. Rent-a-Bike and Blog Book are removed. No invented publication entries are present.
-- Relevant coursework is curated for software engineering and AI roles: 17 transcript subjects and three separately labeled resume subjects. The complete transcript and general technical modules are not reproduced. No transcript document, student identifiers, or additional transcript-derived grades are published.
+- Relevant coursework is curated for software engineering and AI roles: 17 transcript subjects and three additional resume subjects, with provenance retained in metadata. The complete transcript and general technical modules are not reproduced. No transcript document, student identifiers, or additional transcript-derived grades are published.
 - Both original PDF files match their source SHA-256 values. Browser download responses also match these bytes. See `CONTENT_NOTES.md` for provenance.
 - No reference-person content, placeholder social URLs, unprovided project repositories, browser-side GitHub API calls, or external browser scripts appear in the generated HTML. Unchanged source PDFs retain their original contents.
 
@@ -23,11 +23,13 @@ Checked on 1 October 2026.
 
 ## Photo update
 
-The current update adds the owner's real profile photograph and eight supplied gallery photographs, including boxing. The gallery photographs appear only in Gallery; the separate profile photograph appears in the sidebar. All nine source JPEGs are retained unchanged, the portrait uses CSS framing, and the gallery links full photographs to their originals. `CONTENT_NOTES.md` records the file mapping and owner-supplied captions.
+The collection contains the owner's real profile photograph and eight supplied gallery photographs, including boxing. The gallery photographs appear only in Gallery; the separate profile photograph appears in the sidebar. The current files are eight JPEGs and one PNG: the owner supplied a cropped `with-hc-verma.png` to replace the earlier JPEG. All current source images are retained unchanged, the portrait uses CSS framing, and the gallery links full photographs to their originals. `CONTENT_NOTES.md` records the file mapping and owner-supplied captions.
 
-The photo update passes root and `/portfolio` builds, including all local links and the requested project/coursework checks. SHA-256 comparisons confirm that all nine image files match the supplied originals. All 24 HTML pages use the separate profile; the eight event/personal photographs render only on Gallery. The four editable-content fixture builds still pass, including missing-image and initials fallbacks.
+The current update passes root and `/portfolio` builds and local-link checks; the requested project/coursework checks also pass. A SHA-256 comparison confirms the replacement PNG matches the supplied file. The eight unchanged JPEGs previously passed the same comparison against their originals. All 24 HTML pages use the separate profile, and the eight event/personal photographs render only on Gallery. The four editable-content fixture builds passed for the gallery implementation, including missing-image and initials fallbacks.
 
-Chrome checks for Home, Gallery, and Achievements at 1440px, 390px, and 320px confirm loaded images, captions, full gallery framing, and no horizontal overflow or JavaScript errors. Automated axe checks report zero WCAG 2 A/AA and 2.1 AA violations on these pages. Desktop and mobile gallery screenshots were visually reviewed. The full boxing photograph opens from Gallery with JavaScript disabled.
+Fresh browser checks confirm the six homepage highlights match the requested wording and order, public resume-attribution phrases are absent across all 24 pages, and the research-oriented About text adds no degree or enrollment claims. The replacement image loads at its supplied 702 × 884 dimensions and uses `object-fit: contain` so both faces remain visible. The stylesheet URL includes a build version so returning visitors load current framing styles.
+
+Chrome checks for Home, Gallery, Achievements, Education, Experience, and the residential forecasting page at 1440px, 390px, and 320px show no horizontal overflow or JavaScript errors. Automated axe checks report zero WCAG 2 A/AA and 2.1 AA violations on these pages. The revised About layout and replacement photograph were visually reviewed. Gallery links remain ordinary links to the original files; the earlier check confirmed the full boxing photograph opens with JavaScript disabled.
 
 ## Repository selection
 

@@ -12,7 +12,7 @@
     - title: AI and cloud diagnostics
       bullets:
         - Built an agentic root cause analysis system using LLMs, retrieval-augmented generation (RAG) pipelines, and vector databases for cloud diagnostics.
-        - Automated distributed log analysis and failure localization, with a reported 30% reduction in manual debugging effort.
+        - Automated distributed log analysis and failure localization, reducing manual debugging effort by 30%.
         - Developed GenAI tooling for contextual retrieval of enterprise operational knowledge, alongside infrastructure automation and monitoring workflows.
     - title: Blockchain platform engineering and testing
       bullets:

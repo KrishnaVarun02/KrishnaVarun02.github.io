@@ -51,12 +51,12 @@
   visible: true
 
 - id: with-hc-verma
-  image: /images/gallery/with-hc-verma.jpg
+  image: /images/gallery/with-hc-verma.png
   image_alt: Varun standing with Prof. H. C. Verma outdoors.
   caption: With Prof. H. C. Verma, a physics educator I admire.
   category: People and inspiration
-  width: 720
-  height: 1600
+  width: 702
+  height: 884
   order: 6
   visible: true
 

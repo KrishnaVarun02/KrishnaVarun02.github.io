@@ -47,7 +47,7 @@ Use spaces for YAML indentation, keep list items aligned, and write flags as unq
 | What to change | File |
 | --- | --- |
 | Display name, initials, short bio, location, email, social links, portrait, phone visibility, PDF paths | `_config.yml` |
-| Homepage biography and interests | `_pages/about.md` |
+| Homepage biography, interests, and six highlights | `_pages/about.md` |
 | Employment, contribution groups, dates, technologies | `_data/experience.yml` |
 | Education, skills, coursework | `_data/education.yml` |
 | Achievements and competitive programming descriptions | `_data/achievements.yml` |
@@ -64,13 +64,13 @@ Use spaces for YAML indentation, keep list items aligned, and write flags as unq
 
 Employment records and education institutions have `order` and `visible` fields. Copy the structure of an existing entry, use a lower numeric `order` to place it earlier, and set `visible: false` to omit it. Skills, coursework, achievements, and community entries follow their sequence in the YAML file; move or remove complete entries to change those lists. Project/research collection files use `published` instead, as described below.
 
-Relevant coursework is grouped under `coursework` in `_data/education.yml`. Each group has `category`, `source`, and `items`; each item has a `name` and optional `codes` list. The list is deliberately curated for software engineering and AI roles: algorithms, systems, databases, compilers, AI, probability, mathematics, and theoretical foundations. It includes 17 transcript subjects and three separately labeled resume subjects. It is not a complete transcript. To add a subject, copy a neighboring item and its indentation. The original transcript is not a public download.
+Relevant coursework is grouped under `coursework` in `_data/education.yml`. Each group has `category`, `source`, and `items`; each item has a `name` and optional `codes` list. The list is deliberately curated for software engineering and AI roles: algorithms, systems, databases, compilers, AI, probability, mathematics, and theoretical foundations. Its 20 subjects are drawn from 17 transcript entries and three resume entries. The `source` field preserves editorial provenance and is not displayed; public group headings describe subject areas. This is not a complete transcript. To add a subject, copy a neighboring item and its indentation. The original transcript is not a public download.
 
 To add an education project, create `_education_projects/my-course-project.md` using `layout: education_project`, a title, excerpt, tags, `repository_url`, and `published: true`. Set its permalink to `/education/projects/my-course-project/`. Then add a record to `_data/education_repos.yml` with `repo`, `title`, `description`, `show: true`, numeric `order`, `tags`, and `project_url: /education/projects/my-course-project/`. The record controls the Education list and the Markdown file supplies the details. Set `show: false` to hide the listing; use `published: false` on the Markdown page to hide the detail page too. A `project_url` can also reuse an existing project page, as Turbo Compressor does.
 
 ### Biography, identity, and links
 
-Edit `_pages/about.md` for the homepage biography, interests, and introductory links. The homepage focuses on prose about programming, AI, agents, LLMs, and learning new technologies. Project and research details live on their respective pages. Keep `{{ site.author.name }}` in the opening sentence so the display name continues to come from one place.
+Edit `_pages/about.md` for the homepage biography, interests, six highlights, and introductory links. The About text emphasizes curiosity, mathematical reasoning, experimentation, and learning across programming, AI, agents, and LLMs. The highlights appear in this order: IIT (BHU) degree and CPI, JEE Advanced rank, JEE Main rank, JEE Main Mathematics score, chemistry olympiad recognition, and the Oracle Think Tank championship. Project and research details live on their respective pages. Keep `{{ site.author.name }}` in the opening sentence so the display name continues to come from one place.
 
 Edit `author.name` in `_config.yml` to change the visible name throughout the site. `author.full_name` stores the separate full-name metadata. The short sidebar description is `author.bio`; `author.affiliation` and `author.location` are separate fields. Change `author.email`, `author.github`, or `author.linkedin` to update their shared links; keep social URLs complete, beginning with `https://`. Empty optional contact fields are omitted. Contact uses a `mailto:` link that opens the visitor's email application.
 
@@ -264,7 +264,7 @@ There are two steps: upload the image, then describe it in the gallery data.
 
 You may include `width` and `height` with the photograph's original pixel dimensions to reserve its space during loading. An optional unique `id`, such as `boxing`, creates a linkable anchor at `/gallery/#boxing`.
 
-The responsive gallery displays the complete photographs without cropping and links each image to its original JPEG. The supplied files are preserved without synthetic edits. Entries with empty or missing files are omitted. If all entries are hidden, removed, or missing their local files, the gallery shows **Photos coming soon**.
+The responsive gallery displays each supplied photograph in full and links it to its original local image file. The current collection uses seven gallery JPEGs and the owner's cropped PNG at `images/gallery/with-hc-verma.png`; the separate profile is a JPEG. The owner supplied that crop, and the website preserves all current image files without synthetic edits. Entries with empty or missing files are omitted. If all entries are hidden, removed, or missing their local files, the gallery shows **Photos coming soon**.
 
 ## Replace the resume PDFs
 
@@ -378,7 +378,7 @@ _sass/                         Template styles and portfolio adjustments
 assets/css/main.scss           Compiled stylesheet entry point
 assets/js/navigation.js        Small navigation enhancement
 images/profile.jpg             Supplied profile photograph
-images/gallery/                Eight supplied original gallery JPEGs
+images/gallery/                Seven supplied JPEGs and one owner-cropped PNG
 images/projects/               Optional project screenshots
 files/                         Both original resume PDFs
 scripts/check_project_showcase.py  Isolated repository-selection checks

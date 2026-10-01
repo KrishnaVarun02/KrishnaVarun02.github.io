@@ -24,16 +24,22 @@ The directly attached research file `(1)` and the specification's research file 
 - The 30% reduction in manual debugging, 300+ APIs, 40+ scenarios, 10 platform areas, and other numerical contributions are resume-reported figures, not independently measured by the website.
 - The residential load forecasting results are reported as R-squared **0.938** and RMSE **0.263**. No units, datasets, evaluation splits, or additional results are supplied. The website adds none.
 - Research projects have no invented dates, publications, venues, acceptance status, or paper links.
-- Competitive programming titles are attributed to the resume. No numeric ratings, handles, or live ranking claims are added.
+- Competitive programming titles come from the software engineering resume and are stated directly on the site. No numeric ratings, handles, or live ranking claims are added.
 - Mathematics in JEE Main remains a **100% score**, not a percentile. The grade notation **Grade of Excellence (A)\*** and the source's **Indian Olympiad in Chemistry (ACT)** label are retained.
 - The running activity is described as a **10 km run**, avoiding the original resume's ambiguous “10 KM Marathon” wording.
 - The research resume explicitly supports strict delivery timelines for Think Tank and response timelines for Gauth. Public copy keeps the main contributions concise.
 - The owner subsequently supplied explicit research, project, and education repository selections. Descriptions were checked against those repositories' READMEs and, where appropriate, retained result files. Selection and order are static website content; no GitHub account inventory is fetched. Unprovided demos, screenshots, and project dates remain blank.
 - The owner subsequently supplied one profile photograph and eight gallery photographs. The initials avatar and empty-gallery state remain supported fallbacks. Phone visibility defaults to off.
 
+## Public presentation
+
+At the owner's request, visitor-facing accomplishments and results use direct factual wording. Phrases such as “as stated in my resume” and resume-based course headings are omitted. Source metadata and these implementation notes retain provenance, while substantive research limits remain visible.
+
+The About text emphasizes curiosity, mathematical reasoning, careful experimentation, and continued learning. Its six highlights follow the requested order: IIT (BHU) degree/CPI, JEE Advanced rank, JEE Main rank, JEE Main Mathematics score, chemistry olympiad recognition, and the Oracle Think Tank championship. It makes no claim of graduate enrollment or admission.
+
 ## Supplied photographs
 
-The nine source JPEGs are retained unchanged. The profile photograph uses CSS framing; the other eight photographs appear only in Gallery, display in full, and link to their original local files. The eight gallery photographs are not inserted into Achievements or other page content. No synthetic image edits are used. Descriptions follow the owner's supplied context, without inferred dates or additional locations.
+The nine current source images comprise eight JPEGs and one PNG, each retained unchanged. The owner supplied a cropped PNG to replace the earlier H C Verma JPEG; this crop was not generated or edited by the website. The profile photograph uses CSS framing; the other eight photographs appear only in Gallery, display in full, and link to their original local files. The eight gallery photographs are not inserted into Achievements or other page content. No synthetic image edits are used. Descriptions follow the owner's supplied context, without inferred dates or additional locations.
 
 | Website file | Owner-supplied context |
 | --- | --- |
@@ -43,7 +49,7 @@ The nine source JPEGs are retained unchanged. The profile photograph uses CSS fr
 | `images/gallery/bicycle-volunteering-bengaluru.jpg` | Bicycle volunteering for children in Bengaluru |
 | `images/gallery/oracle-painting.jpg` | Painting at Oracle |
 | `images/gallery/blood-donation.jpg` | Blood donation |
-| `images/gallery/with-hc-verma.jpg` | With Prof H C Verma, following the owner's identification |
+| `images/gallery/with-hc-verma.png` | Owner-supplied crop with Prof H C Verma, following the owner's identification |
 | `images/gallery/boxing.jpg` | “In the boxing ring.” No event, venue, date, or medal is attributed to this photograph |
 | `images/gallery/outside-work.jpg` | Casual portrait |
 
@@ -63,7 +69,7 @@ Future publication files can use `title`, `excerpt`, `order`, `published`, and `
 
 ## Transcript coursework
 
-The supplied `Varun_Transcripts.pdf` is a scanned transcript. All four academic-year columns were rendered and read visually. The final selection follows the owner's clarification to emphasize subjects useful for software engineering and AI roles. It contains 17 transcript subjects (18 course codes, combining the two AI entries) covering algorithms, systems, databases, compilers, architecture, AI, probability, mathematics, optimization, and theory. Three additional software/AI subjects from the resume remain separately labeled, for 20 displayed entries in total. This is a relevant-coursework selection, not a complete academic record.
+The supplied `Varun_Transcripts.pdf` is a scanned transcript. All four academic-year columns were rendered and read visually. The final selection follows the owner's clarification to emphasize subjects useful for software engineering and AI roles. It contains 17 transcript subjects (18 course codes, combining the two AI entries) covering algorithms, systems, databases, compilers, architecture, AI, probability, mathematics, optimization, and theory. Three additional software/AI subjects from the resume bring the selection to 20 displayed entries. Their provenance remains in `source` metadata without a resume-attribution label on the public page. This is a relevant-coursework selection, not a complete academic record.
 
 General physics, electrical courses, introductory programming, workshops, general engineering mathematics, graphics, and generic project/training/seminar modules are omitted from this focused presentation. Relevance was checked against the [ACM CS2023 knowledge areas](https://csed.acm.org/knowledge-areas/) and [Google's ML prerequisite guidance](https://developers.google.com/machine-learning/crash-course/prereqs-and-prework); these references inform editorial selection and do not establish additional courses or skills the owner studied.
 

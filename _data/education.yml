@@ -75,9 +75,8 @@ coursework:
         codes: [CSO-445]
       - name: Theory of Computation
         codes: [CSO-322]
-  - category: Additional software and AI coursework from my resume
+  - category: Additional software and AI coursework
     source: resume
-    note: These subjects are listed in my resume; their titles are not separately listed in the transcript.
     items:
       - name: Object Oriented Programming
         codes: []

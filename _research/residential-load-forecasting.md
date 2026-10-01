@@ -24,10 +24,10 @@ This research project applies recurrent deep learning models to short-term resid
 - Used DBSCAN clustering for anomaly-aware preprocessing.
 - Applied dropout regularization and Adam optimization to support generalization under varying consumption patterns.
 
-## Reported results
+## Results
 
-The research resume reports an **R-squared of 0.938** and **RMSE of 0.263**. Dataset details, units, and evaluation splits are not specified in the source.
+Forecasting results: **R-squared 0.938** and **RMSE 0.263**. Dataset details, units, and evaluation splits are not specified for these results.
 
 ## Project materials
 
-The LSTM_AI repository contains experimental notebooks, an LSTM training script, prepared data, reports, and presentations. Its workflows explore LSTM, GRU, and RNN forecasting. Running the notebooks requires supplying the original input data and adapting environment-specific paths. The resume's reported metrics are retained above without assigning them to a particular repository experiment or evaluation split.
+The LSTM_AI repository contains experimental notebooks, an LSTM training script, prepared data, reports, and presentations. Its workflows explore LSTM, GRU, and RNN forecasting. Running the notebooks requires supplying the original input data and adapting environment-specific paths.
