@@ -47,7 +47,7 @@ Use spaces for YAML indentation, keep list items aligned, and write flags as unq
 | What to change | File |
 | --- | --- |
 | Display name, initials, short bio, location, email, social links, portrait, phone visibility, PDF paths | `_config.yml` |
-| Home biography and highlights | `_pages/about.md` |
+| Homepage biography and interests | `_pages/about.md` |
 | Employment, contribution groups, dates, technologies | `_data/experience.yml` |
 | Education, skills, coursework | `_data/education.yml` |
 | Achievements and competitive programming descriptions | `_data/achievements.yml` |
@@ -70,7 +70,7 @@ To add an education project, create `_education_projects/my-course-project.md` u
 
 ### Biography, identity, and links
 
-Edit `_pages/about.md` for the two introductory paragraphs and home highlights. Keep `{{ site.author.name }}` in the opening sentence so the display name continues to come from one place.
+Edit `_pages/about.md` for the homepage biography, interests, and introductory links. The homepage focuses on prose about programming, AI, agents, LLMs, and learning new technologies. Project and research details live on their respective pages. Keep `{{ site.author.name }}` in the opening sentence so the display name continues to come from one place.
 
 Edit `author.name` in `_config.yml` to change the visible name throughout the site. `author.full_name` stores the separate full-name metadata. The short sidebar description is `author.bio`; `author.affiliation` and `author.location` are separate fields. Change `author.email`, `author.github`, or `author.linkedin` to update their shared links; keep social URLs complete, beginning with `https://`. Empty optional contact fields are omitted. Contact uses a `mailto:` link that opens the visitor's email application.
 
@@ -130,7 +130,7 @@ Include only results you can substantiate, or remove this section.
 
 Commit the file. The collection automatically creates the Projects listing entry and `/projects/my-project/` detail page. Use a unique, lowercase, hyphenated `project_slug` and matching permalink for each project. `excerpt` is the short listing description; Markdown below the front matter supplies the full detail page.
 
-- `featured: true` places a project before other authored entries and selects it for the homepage. Within each featured/nonfeatured group, smaller numeric `order` values appear first; distinct numbers make ordering predictable.
+- `featured: true` places a project before other authored entries on the Projects page. Within each featured/nonfeatured group, smaller numeric `order` values appear first; distinct numbers make ordering predictable.
 - `published: false` omits both its authored listing and detail page from normal builds. Restore `true` to publish it.
 - `tags` is the technology list. Use `supervisors: ["Name as credited"]` only when appropriate; leave the list empty otherwise.
 - `project_date` is optional display text, for example a known year or date range. Keep it empty when no date is established. Use `project_date`, not Jekyll's special `date` field.
@@ -171,7 +171,7 @@ To remove a repository from the showcase, set `show: false` or delete its record
 
 Set the selected record's `project_slug` to the matching authored project's `project_slug`, such as `issueforge`, after entering its real repository name. A mapped **published** project appears once on the Projects page, as a consolidated entry inside the repository showcase, with a link to its existing detail page. It is removed from the separate authored list on that page.
 
-The repository record's nonempty title, description, tags, screenshot, and demo override corresponding defaults for its showcase entry. Empty values fall back to the authored project's fields. The mapped repository, screenshot, and demo also become available on the detail page; its title and Markdown narrative remain authored in `_projects/`. Repository `featured` and `order` control the showcase; authored `featured` and `order` still control the home selection. Keep one record per repository and one mapping per authored project; if mappings are repeated, the first in display order is used.
+The repository record's nonempty title, description, tags, screenshot, and demo override corresponding defaults for its showcase entry. Empty values fall back to the authored project's fields. The mapped repository, screenshot, and demo also become available on the detail page; its title and Markdown narrative remain authored in `_projects/`. Repository `featured` and `order` control the showcase; authored `featured` and `order` control unmapped authored entries on the Projects page. Keep one record per repository and one mapping per authored project; if mappings are repeated, the first in display order is used.
 
 | Authored project `published` | Repository `show` | Result when `project_slug` matches |
 | --- | --- | --- |
@@ -219,7 +219,7 @@ Describe the methods used.
 State documented findings, or remove this section if none are available.
 ```
 
-Commit to create its entry on Research and its own detail page. Use `supervisors` for credited supervision, `tags` for research methods, `order` for the Research page order, and `featured: true` for home selection. `published: false` hides its listing and detail page. Optional `research_date`, screenshot, repository, and demo fields work like project metadata; keep them empty until established. The initial research entries have no invented dates, paper links, venues, or acceptance status.
+Commit to create its entry on Research and its own detail page. Use `supervisors` for credited supervision, `tags` for research methods, and `order` for the Research page order. `published: false` hides its listing and detail page. Optional `research_date`, screenshot, repository, and demo fields work like project metadata; keep them empty until established. The initial research entries have no invented dates, paper links, venues, or acceptance status.
 
 The optional `publications` collection is configured separately and defaults to `published: false`. Its section stays hidden while there are no published publication entries. When a real publication exists, create `_publications/actual-publication.md` with accurate content and set its flag explicitly:
 

@@ -33,8 +33,8 @@
     - RAG
     - Vector databases
 
-- employer: Simpl (Buy Now Pay Later)
-  title: Data Engineering Intern
+- employer: Simpl Pay (BNPL)
+  title: Data Engineer Intern
   source_titles:
     - Data Engineer Intern
     - Data Engineering Intern
@@ -45,16 +45,17 @@
   groups:
     - title: Real-time data infrastructure
       bullets:
-        - Replaced once-daily database snapshots with a real-time change data capture (CDC) pipeline, moving from 24-hour batch synchronization to continuous event streaming.
-        - Deployed Debezium on Kafka Connect and configured PostgreSQL source connectors for row-level inserts, updates, and deletes.
-        - Integrated Kafka Connect and Kafka brokers to deliver low-latency change events for downstream systems.
-        - Built a PySpark parsing framework for Debezium JSON mutation streams and downstream analytics.
+        - Replaced a once-daily database snapshot job with a real-time change data capture (CDC) pipeline, shifting synchronization from 24-hour batch cycles to continuous event streaming.
+        - Deployed Debezium on Kafka Connect and configured PostgreSQL source connectors to capture row-level inserts, updates, and deletes and publish change events to Kafka topics.
+        - Integrated Kafka Connect with Kafka brokers to deliver reliable, low-latency database change events, improving data freshness for downstream systems and eliminating reliance on full daily snapshots.
   technologies:
     - Apache Kafka
     - Kafka Connect
     - Debezium
     - PostgreSQL
-    - PySpark
-    - CDC
+    - Change Data Capture (CDC)
+    - Real-time data streaming
     - Event-driven architecture
+    - Database synchronization
+    - Data pipelines
     - Distributed systems

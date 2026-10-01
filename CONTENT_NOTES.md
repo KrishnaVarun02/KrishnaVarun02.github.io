@@ -16,7 +16,7 @@ The directly attached research file `(1)` and the specification's research file 
 - Display name: **Varun Kasamneni**, maintained in `_config.yml` under `author.name`.
 - Full-name metadata: **Krishna Varun Kasamneni**, following the software engineering resume. The research resume says **Venkata Krishna Varun**. These names have not been combined.
 - Oracle appears once, with the neutral title **Software Engineer**, July 2025–Present. Its source title variants, **Platform Software Engineer -1** and **Software Development Engineer (Cloud & AI Infrastructure)**, are retained in `_data/experience.yml` under `source_titles`.
-- Simpl appears once, June–July 2024. Data engineering contributions from both sources are combined.
+- Simpl Pay appears once, June–July 2024. At the owner's request, its experience entry uses only the software engineering resume's points shown in the supplied screenshot.
 - Turbo Compressor has one shared authored detail page, merging both resume descriptions and retaining its supervisor.
 
 ## Reporting boundaries
