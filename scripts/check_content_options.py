@@ -7,7 +7,8 @@ Run from the repository after bundle install:
 An alternative Jekyll command can be supplied with --jekyll-command.
 Requires Python 3, Ruby, and Jekyll. Four actual Jekyll builds run on an isolated
 copy of the repository; original content is never changed. No network calls
-or external test assets are needed. Run against the supplied starter content.
+or external test assets are needed. Gallery and portrait fixtures are independent
+of the real photos configured in the repository.
 """
 
 import argparse
@@ -42,6 +43,9 @@ config = json.loads(subprocess.check_output([
     'ruby', '-ryaml', '-rjson', '-e', 'puts YAML.load_file(ARGV[0]).to_json', str(source / '_config.yml')
 ], text=True))
 config['baseurl'] = '/qa-editing'
+# Establish the empty-state baseline only in the isolated source copy.
+config['author']['avatar'] = ''
+(source / '_data/gallery.yml').write_text('[]\n')
 
 def write_config():
     (source / '_config.yml').write_text(json.dumps(config, indent=2) + '\n')

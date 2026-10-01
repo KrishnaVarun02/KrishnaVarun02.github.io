@@ -13,7 +13,7 @@
   {% assign avatar_file = site.static_files | where: 'path', avatar_path | first %}
   <div class="author__avatar">
     {% if author_avatar != '' and avatar_file %}
-    <img src="{{ avatar_path | relative_url }}" alt="{{ author_avatar_alt | escape }}" width="165" height="165">
+    <img src="{{ avatar_path | relative_url }}" alt="{{ author_avatar_alt | escape }}" width="165" height="165" style="object-position: {{ site.author.avatar_position | default: '50% 50%' | escape }};">
     {% else %}
     <div class="initials-avatar" role="img" aria-label="{{ site.author.name | escape }} initials">{{ site.author.initials | escape }}</div>
     {% endif %}

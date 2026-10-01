@@ -78,7 +78,9 @@ Edit `author.name` in `_config.yml` to change the visible name throughout the si
 
 ### Add or replace your portrait
 
-1. Open `images/` in the repository and choose **Add file → Upload files**. Upload a real portrait named `profile.jpg`, then commit. A roughly square crop works well in the circular frame.
+The current profile uses the owner's supplied photograph wearing a white T-shirt and beige coat, stored at `images/profile.jpg`. The original JPEG is retained; CSS frames it inside the circular sidebar portrait.
+
+1. Open `images/` in the repository and choose **Add file → Upload files**. Upload your replacement portrait as `profile.jpg`, then commit. The circular frame controls how the photograph is displayed without rewriting the original file.
 2. Edit `_config.yml`:
 
    ```yaml
@@ -86,12 +88,13 @@ Edit `author.name` in `_config.yml` to change the visible name throughout the si
      # Keep the other existing author fields here.
      avatar: "/images/profile.jpg"
      avatar_alt: "Portrait of Varun Kasamneni"
+     avatar_position: "50% 0%"
    ```
 
-   Change only the two fields inside the existing `author` section; do not add a second `author` section.
+   Change these fields inside the existing `author` section; do not add a second `author` section. `avatar_position` controls the framing: `50% 0%` centers horizontally and keeps the top of this portrait visible; `50% 50%` centers both directions for a different photograph.
 3. Commit and wait for Pages to rebuild. To replace the photo later, upload a new file using the same name, or update `avatar` to its new path.
 
-When `avatar` is empty or the referenced local file does not exist, the template renders the configured `author.initials` instead. The initial site uses **VK**. Filename spelling and capitalization must match the uploaded file.
+When `avatar` is empty or the referenced local file does not exist, the template renders the configured `author.initials`, currently **VK**, instead. Filename spelling and capitalization must match the uploaded file.
 
 ## Add an authored project
 
@@ -241,10 +244,12 @@ Research projects are not labeled as publications merely because they have a det
 
 ## Add a gallery photo and caption
 
+The gallery currently contains eight owner-supplied photographs: Oracle Think Tank's Realm of Thought, IIT (BHU) convocation, bicycle volunteering for children in Bengaluru, painting at Oracle, blood donation, a photograph with Prof H C Verma identified by the owner, boxing, and a casual portrait. Captions use the owner's descriptions without inferred dates or additional locations. The boxing photograph is captioned “In the boxing ring.” Its event and venue are not established. These photographs appear only in Gallery, with the separate profile photograph in the sidebar.
+
 There are two steps: upload the image, then describe it in the gallery data.
 
 1. Open `images/gallery/`, choose **Add file → Upload files**, upload your photograph, and commit. If the folder is not yet visible in a new repository, upload the `images/gallery` folder structure from your computer. Use a simple filename such as `campus.jpg`.
-2. Open `_data/gallery.yml`. Replace `[]` for the first entry, or append another list item. For example:
+2. Open `_data/gallery.yml` and append another list item. If you previously cleared the list to `[]`, replace that empty list with your first entry. For example:
 
    ```yaml
    - image: "/images/gallery/campus.jpg"
@@ -257,7 +262,9 @@ There are two steps: upload the image, then describe it in the gallery data.
 
 3. Replace the example text with the real caption and image description, then commit. Smaller numeric `order` values appear earlier. `category` is an optional caption label; it does not create a filter. Set `visible: false` to hide the entry or remove it entirely.
 
-The responsive gallery uses local images, captions, and links to the full image. Entries with empty or missing files are omitted. With no visible, existing images it shows **Photos coming soon**. No personal images are supplied initially.
+You may include `width` and `height` with the photograph's original pixel dimensions to reserve its space during loading. An optional unique `id`, such as `boxing`, creates a linkable anchor at `/gallery/#boxing`.
+
+The responsive gallery displays the complete photographs without cropping and links each image to its original JPEG. The supplied files are preserved without synthetic edits. Entries with empty or missing files are omitted. If all entries are hidden, removed, or missing their local files, the gallery shows **Photos coming soon**.
 
 ## Replace the resume PDFs
 
@@ -359,7 +366,7 @@ _data/
   education.yml                Education, grouped skills, coursework
   achievements.yml             Achievements
   community.yml                Leadership, mentoring, activities
-  gallery.yml                  Gallery metadata; initially empty
+  gallery.yml                  Captions and order for eight supplied photographs
   ui.yml                       Shared interface labels
 _pages/                        Home and the nine other top-level pages
 _projects/                     Five authored project Markdown files
@@ -370,7 +377,9 @@ _includes/, _layouts/           Shared Liquid presentation templates
 _sass/                         Template styles and portfolio adjustments
 assets/css/main.scss           Compiled stylesheet entry point
 assets/js/navigation.js        Small navigation enhancement
-images/                        Your future portrait, gallery, and project images
+images/profile.jpg             Supplied profile photograph
+images/gallery/                Eight supplied original gallery JPEGs
+images/projects/               Optional project screenshots
 files/                         Both original resume PDFs
 scripts/check_project_showcase.py  Isolated repository-selection checks
 404.html, robots.txt, sitemap.xml  Static-site supporting pages
@@ -381,7 +390,7 @@ VERIFICATION.md                 Completed delivery checks
 LICENSE, THIRD_PARTY_NOTICES.md, licenses/  Attribution and license notices
 ```
 
-The empty image folders are intentional. The site checks that a configured local image or resume exists before rendering it. `_site/` is generated output and should not be uploaded as the source for this branch-publishing setup.
+The site checks that a configured local image or resume exists before rendering it. Project screenshots remain optional. `_site/` is generated output and should not be uploaded as the source for this branch-publishing setup.
 
 ## Template attribution
 

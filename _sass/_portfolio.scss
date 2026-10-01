@@ -61,7 +61,7 @@ body, .masthead, #main, .page__footer, .sidebar, a, p, h1, h2, img, span { anima
 .page__content .more-repositories { margin-top: 28px; }
 .gallery-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
 .gallery-grid figure { display: block; margin: 0; }
-.gallery-grid img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; margin-bottom: 8px; border-radius: 0; }
+.gallery-grid img { display: block; aspect-ratio: 4 / 3; object-fit: contain; width: 100%; margin-bottom: 8px; border-radius: 0; background: #f7f8f8; }
 .gallery-grid figcaption { font-family: inherit; font-size: 14px; color: #626b72; }
 .empty-state { border-top: 1px solid #eceeef; border-bottom: 1px solid #eceeef; padding: 32px 0; margin: 28px 0; }
 .empty-state h2 { margin-top: 0; border: 0; }

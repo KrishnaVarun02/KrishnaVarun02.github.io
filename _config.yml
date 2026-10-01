@@ -11,8 +11,9 @@ author:
   bio: "Software Engineer at Oracle | IIT (BHU) CSE alumnus."
   affiliation: "Oracle · IIT (BHU)"
   location: "Bengaluru, India"
-  avatar: "" # Upload images/profile.jpg, then set this to /images/profile.jpg.
-  avatar_alt: "Portrait of Varun Kasamneni"
+  avatar: "/images/profile.jpg"
+  avatar_alt: "Varun Kasamneni in a beige coat and white T-shirt"
+  avatar_position: "50% 0%" # CSS framing within the circular profile area.
   email: "kasamnenivarun@gmail.com"
   github: "https://github.com/KrishnaVarun02"
   repositories: "https://github.com/KrishnaVarun02?tab=repositories"

@@ -19,7 +19,15 @@ Checked on 1 October 2026.
 - **Zero automated axe WCAG 2 A/AA and 2.1 AA violations** across all 23 content routes and the open mobile menu. This is an automated check, not a claim of a complete accessibility certification.
 - Verified keyboard activation of the flat mobile menu, its nine direct links, Escape dismissal, and the extracurricular-activities jump. The More submenu is removed.
 - With JavaScript disabled, the native navigation controls, projects, research, contact, and CV remain usable. Essential text and links are generated at build time.
-- Visually checked CV, gallery, education, IssueForge details, and the open mobile menu. No portrait or gallery photographs are fabricated; the initials fallback and empty gallery are intentional.
+- Visually checked CV, gallery, education, IssueForge details, and the open mobile menu. Portrait and gallery fallback behavior was checked before the owner supplied the current photographs.
+
+## Photo update
+
+The current update adds the owner's real profile photograph and eight supplied gallery photographs, including boxing. The gallery photographs appear only in Gallery; the separate profile photograph appears in the sidebar. All nine source JPEGs are retained unchanged, the portrait uses CSS framing, and the gallery links full photographs to their originals. `CONTENT_NOTES.md` records the file mapping and owner-supplied captions.
+
+The photo update passes root and `/portfolio` builds, including all local links and the requested project/coursework checks. SHA-256 comparisons confirm that all nine image files match the supplied originals. All 24 HTML pages use the separate profile; the eight event/personal photographs render only on Gallery. The four editable-content fixture builds still pass, including missing-image and initials fallbacks.
+
+Chrome checks for Home, Gallery, and Achievements at 1440px, 390px, and 320px confirm loaded images, captions, full gallery framing, and no horizontal overflow or JavaScript errors. Automated axe checks report zero WCAG 2 A/AA and 2.1 AA violations on these pages. Desktop and mobile gallery screenshots were visually reviewed. The full boxing photograph opens from Gallery with JavaScript disabled.
 
 ## Repository selection
 

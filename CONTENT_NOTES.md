@@ -29,7 +29,23 @@ The directly attached research file `(1)` and the specification's research file 
 - The running activity is described as a **10 km run**, avoiding the original resume's ambiguous “10 KM Marathon” wording.
 - The research resume explicitly supports strict delivery timelines for Think Tank and response timelines for Gauth. Public copy keeps the main contributions concise.
 - The owner subsequently supplied explicit research, project, and education repository selections. Descriptions were checked against those repositories' READMEs and, where appropriate, retained result files. Selection and order are static website content; no GitHub account inventory is fetched. Unprovided demos, screenshots, and project dates remain blank.
-- No portrait or personal gallery photographs were supplied. The initials avatar and empty gallery are intentional. Phone visibility defaults to off.
+- The owner subsequently supplied one profile photograph and eight gallery photographs. The initials avatar and empty-gallery state remain supported fallbacks. Phone visibility defaults to off.
+
+## Supplied photographs
+
+The nine source JPEGs are retained unchanged. The profile photograph uses CSS framing; the other eight photographs appear only in Gallery, display in full, and link to their original local files. The eight gallery photographs are not inserted into Achievements or other page content. No synthetic image edits are used. Descriptions follow the owner's supplied context, without inferred dates or additional locations.
+
+| Website file | Owner-supplied context |
+| --- | --- |
+| `images/profile.jpg` | Profile photograph wearing a white T-shirt and beige coat |
+| `images/gallery/oracle-think-tank.jpg` | Oracle Think Tank, Realm of Thought |
+| `images/gallery/iit-bhu-convocation.jpg` | IIT (BHU) convocation |
+| `images/gallery/bicycle-volunteering-bengaluru.jpg` | Bicycle volunteering for children in Bengaluru |
+| `images/gallery/oracle-painting.jpg` | Painting at Oracle |
+| `images/gallery/blood-donation.jpg` | Blood donation |
+| `images/gallery/with-hc-verma.jpg` | With Prof H C Verma, following the owner's identification |
+| `images/gallery/boxing.jpg` | “In the boxing ring.” No event, venue, date, or medal is attributed to this photograph |
+| `images/gallery/outside-work.jpg` | Casual portrait |
 
 ## Future publications
 
