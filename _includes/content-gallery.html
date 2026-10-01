@@ -10,9 +10,13 @@
         {% assign image_file = site.static_files | where: 'path', image_path | first %}
         {% if image_file %}
           {% assign visible_image_count = visible_image_count | plus: 1 %}
+          {% assign gallery_caption = entry.caption | default: '' | strip %}
+          {% assign gallery_category = entry.category | default: '' | strip %}
+          {% assign gallery_alt = entry.image_alt | default: entry.alt | default: gallery_caption | default: 'Gallery photograph' | strip %}
+          {% if gallery_alt == '' %}{% assign gallery_alt = 'Gallery photograph' %}{% endif %}
           <figure class="gallery-item">
-            <a href="{{ image_path | relative_url }}"><img src="{{ image_path | relative_url }}" alt="{{ entry.image_alt | default: entry.alt | default: entry.caption | escape }}" loading="lazy" decoding="async"></a>
-            {% if entry.caption or entry.category %}<figcaption>{% if entry.caption %}{{ entry.caption | escape }}{% endif %}{% if entry.category %}<span class="entry-meta">{{ entry.category | escape }}</span>{% endif %}</figcaption>{% endif %}
+            <a href="{{ image_path | relative_url }}"><img src="{{ image_path | relative_url }}" alt="{{ gallery_alt | escape }}" loading="lazy" decoding="async"></a>
+            {% if gallery_caption != '' or gallery_category != '' %}<figcaption>{% if gallery_caption != '' %}{{ gallery_caption | escape }}{% endif %}{% if gallery_category != '' %}<span class="entry-meta">{{ gallery_category | escape }}</span>{% endif %}</figcaption>{% endif %}
           </figure>
         {% endif %}
       {% endif %}

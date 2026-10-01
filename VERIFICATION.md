@@ -33,11 +33,14 @@ Five isolated fixture builds exercise the implemented Liquid templates:
 
 ## Repeat the checks
 
+Four additional isolated Jekyll builds verify gallery ordering and visibility, valid/missing portrait fallback, image alt text, omission of empty captions, empty or whitespace-only contact fields, phone visibility, missing resume files, and default-hidden versus populated future publications. These checks found and resolved empty-link guards that otherwise depended on Liquid's `blank` comparison.
+
 ```sh
 bundle install
 bundle exec jekyll build
 python3 scripts/check_site.py _site
 python3 scripts/check_project_showcase.py
+python3 scripts/check_content_options.py
 bundle exec jekyll build --baseurl /portfolio --destination _site-project
 python3 scripts/check_site.py _site-project --baseurl /portfolio
 ```
@@ -50,4 +53,4 @@ Target public repository: `KrishnaVarun02/KrishnaVarun02.github.io`.
 
 **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root)**, with no custom domain and no `.nojekyll` file. `url` is `https://krishnavarun02.github.io` and `baseurl` is empty.
 
-See the deployment result in the final handoff and the repository's Pages build status.
+GitHub's own Jekyll build and Pages deployment succeeded. The public site at **https://krishnavarun02.github.io/** was tested directly: all 16 content routes, the compiled CSS and JavaScript, and both unchanged PDF downloads returned successfully. Desktop and mobile screenshots of the live deployment were also inspected. The repository is public, its default branch is `main`, and HTTPS is enforced.

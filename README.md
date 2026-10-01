@@ -1,6 +1,6 @@
 # Varun Kasamneni — personal portfolio
 
-A Jekyll portfolio built from the AcademicPages / Minimal Mistakes template family, with an academic profile sidebar, compact navigation, Markdown project and research pages, and editable YAML data. The intended address is **https://krishnavarun02.github.io/**.
+A Jekyll portfolio built from the AcademicPages / Minimal Mistakes template family, with an academic profile sidebar, compact navigation, Markdown project and research pages, and editable YAML data. Live at **[krishnavarun02.github.io](https://krishnavarun02.github.io/)**. The public source repository is **[KrishnaVarun02.github.io](https://github.com/KrishnaVarun02/KrishnaVarun02.github.io)**.
 
 The complete site can run on GitHub Free using a public repository and the free `github.io` address. Editing and publishing require only GitHub's website; local Ruby tooling is optional. There is no paid service, CMS, database, form backend, analytics service, or GitHub API request in the visitor experience. Hosting remains subject to [GitHub Pages' normal limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
 
@@ -316,10 +316,12 @@ Run a production-style build and the repository-selection checks with:
 
 ```sh
 bundle exec jekyll build
+python3 scripts/check_site.py _site
 python3 scripts/check_project_showcase.py
+python3 scripts/check_content_options.py
 ```
 
-The showcase script uses temporary source copies to exercise selection, ordering, hidden projects, mapping without duplication, missing images, optional links, and project-site URL paths. It does not modify the published selection file. Python 3 is needed only for this validation script, not for building or hosting the site. An alternative Jekyll executable can be passed with `--jekyll-command '/absolute/path/to/jekyll-wrapper'`.
+The showcase script uses temporary source copies to exercise selection, ordering, hidden projects, mapping without duplication, missing images, optional links, and project-site URL paths. The content-options script checks gallery images, portrait fallback, empty contact fields, phone visibility, missing PDFs, and future publications. Neither script modifies the real content or published selection. Python 3 is needed only for these validation scripts, not for building or hosting the site. An alternative Jekyll executable can be passed with `--jekyll-command '/absolute/path/to/jekyll-wrapper'`.
 
 To check project-path rendering independently of the production settings:
 
