@@ -1,0 +1,14 @@
+{% assign experiences = site.data.experience | sort: 'order' %}
+{% for experience in experiences %}
+  {% unless experience.visible == false %}
+  <section class="content-entry">
+    <h2>{{ experience.title | escape }} · {{ experience.employer | escape }}</h2>
+    <p class="entry-meta">{{ experience.period | escape }} · {{ experience.location | escape }}</p>
+    {% for group in experience.groups %}
+    <h3>{{ group.title | escape }}</h3>
+    <ul>{% for item in group.bullets %}<li>{{ item | escape }}</li>{% endfor %}</ul>
+    {% endfor %}
+    {% if experience.technologies.size > 0 %}<p class="entry-technologies"><strong>Technologies:</strong> {{ experience.technologies | join: ', ' | escape }}</p>{% endif %}
+  </section>
+  {% endunless %}
+{% endfor %}

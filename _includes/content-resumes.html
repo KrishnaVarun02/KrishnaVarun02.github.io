@@ -1,0 +1,16 @@
+{% assign resume_count = 0 %}
+<ul class="resume-downloads">
+{% for resume in site.resumes %}
+  {% if resume.path and resume.path != '' %}
+    {% assign resume_first_char = resume.path | slice: 0, 1 %}
+    {% assign resume_path = resume.path %}
+    {% unless resume_first_char == '/' %}{% assign resume_path = '/' | append: resume.path %}{% endunless %}
+    {% assign resume_file = site.static_files | where: 'path', resume_path | first %}
+    {% if resume_file %}
+      {% assign resume_count = resume_count | plus: 1 %}
+      <li><a class="btn btn--primary" href="{{ resume_path | relative_url }}" download>{{ resume.label | escape }}</a> <span class="entry-meta">PDF</span></li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
+{% if resume_count == 0 %}<p>Resume downloads will be available here soon. Please <a href="{{ '/contact/' | relative_url }}">get in touch</a> for a copy.</p>{% endif %}

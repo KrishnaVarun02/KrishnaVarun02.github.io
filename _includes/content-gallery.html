@@ -1,0 +1,29 @@
+{% assign gallery_entries = site.data.gallery | sort: 'order' %}
+{% assign visible_image_count = 0 %}
+{% capture gallery_images %}
+  {% for entry in gallery_entries %}
+    {% unless entry.visible == false or entry.show == false %}
+      {% if entry.image and entry.image != '' %}
+        {% assign image_first_char = entry.image | slice: 0, 1 %}
+        {% assign image_path = entry.image %}
+        {% unless image_first_char == '/' %}{% assign image_path = '/' | append: entry.image %}{% endunless %}
+        {% assign image_file = site.static_files | where: 'path', image_path | first %}
+        {% if image_file %}
+          {% assign visible_image_count = visible_image_count | plus: 1 %}
+          <figure class="gallery-item">
+            <a href="{{ image_path | relative_url }}"><img src="{{ image_path | relative_url }}" alt="{{ entry.image_alt | default: entry.alt | default: entry.caption | escape }}" loading="lazy" decoding="async"></a>
+            {% if entry.caption or entry.category %}<figcaption>{% if entry.caption %}{{ entry.caption | escape }}{% endif %}{% if entry.category %}<span class="entry-meta">{{ entry.category | escape }}</span>{% endif %}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endcapture %}
+{% if visible_image_count > 0 %}
+  <div class="gallery-grid">{{ gallery_images }}</div>
+{% else %}
+  <div class="empty-state">
+    <h2>Photos coming soon</h2>
+    <p>A space for moments from work, campus, and life beyond engineering.</p>
+  </div>
+{% endif %}

@@ -1,0 +1,23 @@
+<aside class="sidebar" aria-label="{{ site.data.ui.profile_label }}">
+  {% assign avatar_path = site.author.avatar | prepend: '/' | replace: '//', '/' %}
+  {% assign avatar_file = site.static_files | where: 'path', avatar_path | first %}
+  <div class="author__avatar">
+    {% if site.author.avatar != blank and avatar_file %}
+    <img src="{{ avatar_path | relative_url }}" alt="{{ site.author.avatar_alt | escape }}" width="165" height="165">
+    {% else %}
+    <div class="initials-avatar" role="img" aria-label="{{ site.author.name | escape }} initials">{{ site.author.initials | escape }}</div>
+    {% endif %}
+  </div>
+  <div class="author__content">
+    <h2 class="author__name">{{ site.author.name | escape }}</h2>
+    {% if site.author.bio != blank %}<p class="author__bio">{{ site.author.bio | escape }}</p>{% endif %}
+  </div>
+  <ul class="author__urls">
+    {% if site.author.affiliation != blank %}<li>{% include icon.html name='building' %}<span>{{ site.author.affiliation | escape }}</span></li>{% endif %}
+    {% if site.author.location != blank %}<li>{% include icon.html name='location' %}<span>{{ site.author.location | escape }}</span></li>{% endif %}
+    {% if site.author.email != blank %}<li><a href="mailto:{{ site.author.email | escape }}">{% include icon.html name='email' %}{{ site.data.ui.email }}</a></li>{% endif %}
+    {% if site.author.github != blank %}<li><a href="{{ site.author.github | escape }}" rel="me">{% include icon.html name='github' %}{{ site.data.ui.github }}</a></li>{% endif %}
+    {% if site.author.linkedin != blank %}<li><a href="{{ site.author.linkedin | escape }}" rel="me">{% include icon.html name='linkedin' %}{{ site.data.ui.linkedin }}</a></li>{% endif %}
+    {% if site.author.show_phone and site.author.phone != blank %}<li><a href="tel:{{ site.author.phone | remove: ' ' | escape }}">{% include icon.html name='phone' %}{{ site.author.phone | escape }}</a></li>{% endif %}
+  </ul>
+</aside>

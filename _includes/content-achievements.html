@@ -1,0 +1,11 @@
+{% for section in site.data.achievements %}
+<section class="content-entry">
+  <h2>{{ section.title | escape }}</h2>
+  {% if section.note %}<p class="entry-meta">{{ section.note | escape }}</p>{% endif %}
+  <ul>
+  {% for item in section.items %}
+    <li>{{ item.text | escape }}{% if item.link and item.link != '' %} <a href="{{ item.link | relative_url }}">{{ item.link_label | default: 'Read more' | escape }}</a>.{% endif %}</li>
+  {% endfor %}
+  </ul>
+</section>
+{% endfor %}

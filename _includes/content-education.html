@@ -1,0 +1,22 @@
+<h2>Education</h2>
+{% assign institutions = site.data.education.institutions | sort: 'order' %}
+{% for institution in institutions %}
+  {% unless institution.visible == false %}
+  <section class="content-entry">
+    <h3>{{ institution.name | escape }}</h3>
+    <p>{{ institution.qualification | escape }}{% if institution.board %}<br>{{ institution.board | escape }}{% endif %}</p>
+    <p class="entry-meta">{{ institution.period | escape }} · {{ institution.result | escape }}</p>
+  </section>
+  {% endunless %}
+{% endfor %}
+<h2>Skills</h2>
+<dl class="skills-list">
+{% for skill in site.data.education.skills %}
+  <dt>{{ skill.category | escape }}</dt>
+  <dd>{{ skill.items | join: ', ' | escape }}</dd>
+{% endfor %}
+</dl>
+<h2>Coursework</h2>
+<ul class="course-list">
+{% for course in site.data.education.courses %}<li>{{ course | escape }}</li>{% endfor %}
+</ul>

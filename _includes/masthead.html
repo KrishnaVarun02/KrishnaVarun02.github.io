@@ -1,0 +1,12 @@
+<header class="masthead">
+  <div class="masthead__inner-wrap">
+    <a class="site-title" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>{{ site.author.name | escape }}</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {% include navigation-links.html %}
+    </nav>
+    <details class="mobile-nav">
+      <summary>{{ site.data.ui.menu }} <span class="menu-icon" aria-hidden="true">☰</span></summary>
+      <nav aria-label="Mobile navigation">{% include navigation-links.html %}</nav>
+    </details>
+  </div>
+</header>

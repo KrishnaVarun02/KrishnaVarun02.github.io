@@ -1,0 +1,45 @@
+institutions:
+  - name: IIT (BHU), Varanasi
+    qualification: B.Tech in Computer Science and Engineering
+    period: July 2021–May 2025
+    result: CPI 8.46/10
+    order: 1
+    visible: true
+  - name: Sri Chaitanya Junior College, Vijayawada
+    qualification: Higher Secondary
+    board: Andhra Pradesh State Board of Intermediate Education
+    period: June 2019–July 2021
+    result: 96.6%
+    order: 2
+    visible: true
+
+skills:
+  - category: Languages
+    items: [C++, Java, Python, SQL, C]
+  - category: Frameworks and libraries
+    items: [LangGraph, LangChain, Spring Boot, Django, Pydantic, TestNG, Pytest, PySpark]
+  - category: Cloud and platforms
+    items: [Oracle Cloud Infrastructure, Hyperledger Fabric, Docker, Kubernetes]
+  - category: Data systems
+    items: [Kafka, Kafka Connect, Debezium, PostgreSQL, MySQL, SQLite]
+  - category: Developer tools
+    items: [Git, GitHub, GitHub API, Bitbucket, Postman, OpenRouter, Codex, Lumberjack]
+  - category: AI and research methods
+    items: [LLM agents, RAG, Multi-agent systems, Reinforcement learning, LSTM, GRU, DBSCAN]
+
+courses:
+  - Data Structures
+  - Computer Programming
+  - Object Oriented Programming
+  - Operating Systems
+  - Computer Networks
+  - Database Management Systems
+  - Artificial Intelligence
+  - Digital Logic and Design
+  - Computer Graphics
+  - Computer Architecture
+  - Probability and Statistics
+  - Discrete Mathematics
+  - Software Engineering
+  - Distributed Systems
+  - Machine Learning Fundamentals
