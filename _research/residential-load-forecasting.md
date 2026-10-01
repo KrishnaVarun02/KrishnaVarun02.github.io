@@ -10,7 +10,8 @@ supervisors: [Prof. S. K. Singh, Ph.D. researcher Jaishankara]
 tags: [Deep learning, LSTM, GRU, DBSCAN, Energy forecasting]
 image: ''
 image_alt: ''
-repository_url: ''
+repository_name: LSTM_AI
+repository_url: https://github.com/KrishnaVarun02/LSTM_AI
 demo_url: ''
 ---
 
@@ -26,3 +27,7 @@ This research project applies recurrent deep learning models to short-term resid
 ## Reported results
 
 The research resume reports an **R-squared of 0.938** and **RMSE of 0.263**. Dataset details, units, and evaluation splits are not specified in the source.
+
+## Project materials
+
+The LSTM_AI repository contains experimental notebooks, an LSTM training script, prepared data, reports, and presentations. Its workflows explore LSTM, GRU, and RNN forecasting. Running the notebooks requires supplying the original input data and adapting environment-specific paths. The resume's reported metrics are retained above without assigning them to a particular repository experiment or evaluation split.

@@ -6,3 +6,5 @@ excerpt: Competitive programming, academic achievements, and leadership recognit
 ---
 
 {% include content-achievements.html %}
+
+[Extracurricular activities]({{ '/community/#extracurricular-activities' | relative_url }})

@@ -1,0 +1,41 @@
+# Explicit education-project selection, in the requested display order.
+# project_url can reuse an existing authored project or an education project page.
+- repo: KrishnaVarun02/Turbo-Compressor
+  title: Turbo Compressor
+  description: A C++ command-line utility for lossless file compression and decompression with Huffman coding.
+  show: true
+  order: 1
+  tags: [C++, Huffman coding, Data structures]
+  project_url: /projects/turbo-compressor/
+
+- repo: KrishnaVarun02/sclp-compiler
+  title: SCLP Compiler
+  description: A typed C-subset compiler using Flex, Bison, and C++17, with three-address code, register-transfer IR, and native AArch64 and x86-64 assembly.
+  show: true
+  order: 2
+  tags: [C++, Flex, Bison, Compilers, Assembly]
+  project_url: /education/projects/sclp-compiler/
+
+- repo: KrishnaVarun02/p2p-cryptocurrency-simulator
+  title: P2P Cryptocurrency Network Simulator
+  description: A Python discrete-event blockchain simulator modeling network latency, transaction validation, forks, and independent selfish miners.
+  show: true
+  order: 3
+  tags: [Python, Discrete-event simulation, Blockchain, Peer-to-peer networks]
+  project_url: /education/projects/p2p-cryptocurrency-simulator/
+
+- repo: KrishnaVarun02/champsim-architecture-lab
+  title: ChampSim Architecture Lab
+  description: An L-TAGE-style branch predictor and LRU, LFU, and FIFO cache policies with native ChampSim integration and reproducible synthetic experiments.
+  show: true
+  order: 4
+  tags: [C++, Python, ChampSim, Branch prediction, Cache replacement]
+  project_url: /education/projects/champsim-architecture-lab/
+
+- repo: KrishnaVarun02/xv6-enhancements
+  title: xv6 Enhancements
+  description: RISC-V xv6 extensions for lazy allocation, anonymous mmap, clone/join threads, stride scheduling, and QEMU regression tests.
+  show: true
+  order: 5
+  tags: [C, RISC-V, xv6, Operating systems, QEMU]
+  project_url: /education/projects/xv6-enhancements/

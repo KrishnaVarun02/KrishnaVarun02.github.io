@@ -15,6 +15,7 @@ author:
   avatar_alt: "Portrait of Varun Kasamneni"
   email: "kasamnenivarun@gmail.com"
   github: "https://github.com/KrishnaVarun02"
+  repositories: "https://github.com/KrishnaVarun02?tab=repositories"
   linkedin: "https://www.linkedin.com/in/krishna-varun-kasamneni-4106a324a"
   phone: "+91 9949686580"
   show_phone: false
@@ -37,6 +38,9 @@ collections:
   research:
     output: true
     permalink: /research/:name/
+  education_projects:
+    output: true
+    permalink: /education/projects/:name/
   publications:
     output: true
     permalink: /research/publications/:name/
@@ -66,6 +70,13 @@ defaults:
     values:
       layout: single
       published: false
+  - scope:
+      path: ""
+      type: education_projects
+    values:
+      layout: education_project
+      published: true
+      order: 100
 sass:
   sass_dir: _sass
   style: compressed

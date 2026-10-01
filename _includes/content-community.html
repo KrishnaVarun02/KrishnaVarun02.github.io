@@ -1,6 +1,6 @@
 {% for section in site.data.community %}
 <section class="content-section">
-  <h2>{{ section.title | escape }}</h2>
+  <h2 id="{{ section.id | default: section.title | slugify }}">{{ section.title | escape }}</h2>
   {% for entry in section.entries %}
   <div class="content-entry"{% if entry.id %} id="{{ entry.id | escape }}"{% endif %}>
     <h3>{{ entry.title | escape }}</h3>

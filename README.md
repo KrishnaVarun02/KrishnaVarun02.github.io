@@ -54,6 +54,7 @@ Use spaces for YAML indentation, keep list items aligned, and write flags as unq
 | Leadership, mentoring, activities | `_data/community.yml` |
 | Authored project descriptions and detail pages | `_projects/*.md` |
 | Research descriptions and detail pages | `_research/*.md` |
+| Education project selection and detail pages | `_data/education_repos.yml`, `_education_projects/*.md` |
 | Selected GitHub repositories | `_data/project_repos.yml` |
 | Gallery image metadata | `_data/gallery.yml` |
 | Top navigation labels and order | `_data/navigation.yml` |
@@ -62,6 +63,10 @@ Use spaces for YAML indentation, keep list items aligned, and write flags as unq
 | Layout and appearance | `_includes/`, `_layouts/`, `_sass/_portfolio.scss`, `assets/css/main.scss` |
 
 Employment records and education institutions have `order` and `visible` fields. Copy the structure of an existing entry, use a lower numeric `order` to place it earlier, and set `visible: false` to omit it. Skills, coursework, achievements, and community entries follow their sequence in the YAML file; move or remove complete entries to change those lists. Project/research collection files use `published` instead, as described below.
+
+Relevant coursework is grouped under `coursework` in `_data/education.yml`. Each group has `category`, `source`, and `items`; each item has a `name` and optional `codes` list. The list is deliberately curated for software engineering and AI roles: algorithms, systems, databases, compilers, AI, probability, mathematics, and theoretical foundations. It includes 17 transcript subjects and three separately labeled resume subjects. It is not a complete transcript. To add a subject, copy a neighboring item and its indentation. The original transcript is not a public download.
+
+To add an education project, create `_education_projects/my-course-project.md` using `layout: education_project`, a title, excerpt, tags, `repository_url`, and `published: true`. Set its permalink to `/education/projects/my-course-project/`. Then add a record to `_data/education_repos.yml` with `repo`, `title`, `description`, `show: true`, numeric `order`, `tags`, and `project_url: /education/projects/my-course-project/`. The record controls the Education list and the Markdown file supplies the details. Set `show: false` to hide the listing; use `published: false` on the Markdown page to hide the detail page too. A `project_url` can also reuse an existing project page, as Turbo Compressor does.
 
 ### Biography, identity, and links
 
@@ -132,17 +137,17 @@ Commit the file. The collection automatically creates the Projects listing entry
 - For a screenshot, upload the file to `images/projects/`, set `image: "/images/projects/my-project.png"`, and write meaningful `image_alt` text. Empty or missing local files produce no image element.
 - Set `repository_url` to the actual repository URL and `demo_url` to an existing demo when available. Empty values produce no links. Local demo paths can use `/some-page/`; external demos need a full URL.
 
-The four initial resume projects remain editable authored content. Their repository names have deliberately not been guessed.
+The five current project entries are IssueForge, Turbo Compressor, Parvathi, MoodMix, and WorkLens, in that order. Each has an authored detail page and a verified repository link supplied by the site owner. Rent-a-Bike and Blog Book have been removed from the website.
 
 ## Choose GitHub repositories for the showcase
 
-The Projects page has a **Selected GitHub Repositories** section only when `_data/project_repos.yml` contains records with the literal boolean `show: true`. The file starts as `[]`, so there are no selected repositories initially. It never fetches or displays every repository, fork, or starred project from your account.
+The Projects page has a **Selected GitHub Repositories** section only when `_data/project_repos.yml` contains records with the literal boolean `show: true`. It currently selects the five repositories requested by the owner. It never fetches or displays every repository, fork, or starred project from your account.
 
 1. Open the repository you want to show on GitHub. From a URL such as `https://github.com/OWNER/REPOSITORY`, copy just `OWNER/REPOSITORY`.
 2. Edit `_data/project_repos.yml`. For the first entry, replace its `[]` with the example below. For later entries, append another complete `- repo:` block at the same indentation level.
 3. Replace the placeholder with the real owner/repository and curate its title and description. Set `show: true` only when ready, then commit.
 
-The requested disabled starting example is:
+Use this disabled example when adding a new selection:
 
 ```yaml
 - repo: KrishnaVarun02/REPLACE_WITH_ACTUAL_REPOSITORY_NAME
@@ -176,6 +181,10 @@ The repository record's nonempty title, description, tags, screenshot, and demo 
 | `false` | `false` | Neither entry appears |
 
 A missing or mistyped `project_slug` leaves a standalone selected repository. Hiding a selection does not erase an independent `repository_url` written in the authored Markdown file. This separates curation of the GitHub showcase from publication of the project narrative.
+
+The Research and Education project sections have their own selections and ordering. Research uses the `order` and `repository_url` fields in `_research/*.md`; its current order is MARL, LSTM_AI, local-credit-diagnostics, and patchbudget. Education uses `_data/education_repos.yml`, in the order Turbo-Compressor, sclp-compiler, p2p-cryptocurrency-simulator, champsim-architecture-lab, and xv6-enhancements. Turbo Compressor intentionally appears in both Projects and Education and shares its existing detail page. The other education details live in `_education_projects/`.
+
+Each of these three sections ends with **Show more on GitHub**. Its target is configured once as `author.repositories` in `_config.yml` and opens the owner's complete GitHub repository list. This link does not automatically add repositories to the portfolio.
 
 ## Add research or a future publication
 
@@ -273,7 +282,7 @@ Use the real uploaded paths, preserving case. To remove a download button, remov
 
 ## Reorder or add pages
 
-Edit `_data/navigation.yml` to reorder the complete `- title:` / `url:` pairs. The `main` list appears in the compact header, and `more` contains Achievements, Community, and Contact. Keep a manageable number of links in `main`. The name at the left of the header links to Home.
+Edit `_data/navigation.yml` to reorder the complete `- title:` / `url:` pairs. All nine links—including Achievements, Community, and Contact—are in the `main` list and appear side by side in the desktop header. On narrow screens, the same flat list appears inside the accessible Menu control. There is no More submenu. The name at the left of the header links to Home.
 
 To add a top-level page, create `_pages/my-page.md`:
 
@@ -317,6 +326,7 @@ Run a production-style build and the repository-selection checks with:
 ```sh
 bundle exec jekyll build
 python3 scripts/check_site.py _site
+python3 scripts/check_requested_updates.py _site
 python3 scripts/check_project_showcase.py
 python3 scripts/check_content_options.py
 ```
@@ -329,7 +339,7 @@ To check project-path rendering independently of the production settings:
 bundle exec jekyll serve --baseurl /preview
 ```
 
-Visit `http://127.0.0.1:4000/preview/`, open a project detail page directly, refresh it, and follow its back link. Check a narrow/mobile viewport, the Menu and More controls, keyboard focus, both PDF downloads, the mailto link, and image paths. Disable JavaScript once to check the static content and navigation. Essential text and links render at build time; JavaScript only enhances the menu behavior.
+Visit `http://127.0.0.1:4000/preview/`, open a project detail page directly, refresh it, and follow its back link. Check a narrow/mobile viewport, the Menu control and its direct navigation links, keyboard focus, both PDF downloads, the mailto link, and image paths. Disable JavaScript once to check the static content and navigation. Essential text and links render at build time; JavaScript only enhances the menu behavior.
 
 See [VERIFICATION.md](VERIFICATION.md) for the checks actually completed for this delivery. These instructions do not imply that any later edit has already been checked.
 
@@ -342,8 +352,9 @@ Check the latest Pages run under **Actions** first. A failed build commonly indi
 ```text
 _config.yml                    Identity, URLs, author fields, resumes, collections
 _data/
-  navigation.yml               Header and More links
+  navigation.yml               Nine direct navigation links
   project_repos.yml            Explicit GitHub repository selection
+  education_repos.yml          Education project selection and order
   experience.yml               Employment and contributions
   education.yml                Education, grouped skills, coursework
   achievements.yml             Achievements
@@ -351,8 +362,9 @@ _data/
   gallery.yml                  Gallery metadata; initially empty
   ui.yml                       Shared interface labels
 _pages/                        Home and the nine other top-level pages
-_projects/                     Four authored project Markdown files
-_research/                     Two research project Markdown files
+_projects/                     Five authored project Markdown files
+_research/                     Four research project Markdown files
+_education_projects/           Four education details; Turbo reuses its project page
 _publications/                 Optional future collection; create when needed
 _includes/, _layouts/           Shared Liquid presentation templates
 _sass/                         Template styles and portfolio adjustments

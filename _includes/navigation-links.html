@@ -4,18 +4,4 @@
   <li><a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
   {% endunless %}
   {% endfor %}
-  {% if site.data.navigation.more.size > 0 %}
-  <li class="more-item">
-    <details class="more-nav">
-      <summary>{{ site.data.ui.more }}</summary>
-      <ul>
-        {% for item in site.data.navigation.more %}
-        {% unless item.visible == false %}
-        <li><a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
-        {% endunless %}
-        {% endfor %}
-      </ul>
-    </details>
-  </li>
-  {% endif %}
 </ul>

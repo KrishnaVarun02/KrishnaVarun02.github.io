@@ -1,1 +1,59 @@
-[]
+- repo: KrishnaVarun02/IssueForge-Multi-Agent-GitHub-Issue-to-PR-Orchestrator
+  title: IssueForge
+  description: A multi-agent workflow that turns GitHub issues into implementation plans, validated patches, regression tests, and human-approved pull requests.
+  show: true
+  featured: true
+  order: 1
+  tags: [Python, LangGraph, Pydantic, Docker, Git, GitHub API, SQLite, Pytest, OpenRouter]
+  image: ""
+  image_alt: ""
+  demo_url: ""
+  project_slug: issueforge
+
+- repo: KrishnaVarun02/Turbo-Compressor
+  title: Turbo Compressor
+  description: A C++ command-line utility for lossless file compression and decompression using Huffman coding.
+  show: true
+  featured: false
+  order: 2
+  tags: [C++, Huffman coding, Data structures, Object-oriented programming, CLI]
+  image: ""
+  image_alt: ""
+  demo_url: ""
+  project_slug: turbo-compressor
+
+- repo: KrishnaVarun02/Parvathi
+  title: Parvathi
+  description: A native desktop voice assistant for dictation, validated computer commands, and spoken conversation on Windows and macOS.
+  show: true
+  featured: false
+  order: 3
+  tags: [Swift, SwiftUI, AppKit, "C#", WPF, Vosk, Apple Speech, Ollama]
+  image: ""
+  image_alt: ""
+  demo_url: ""
+  project_slug: parvathi
+
+- repo: KrishnaVarun02/moodmix
+  title: MoodMix
+  description: A playlist application that combines mood and song-language preferences with a durable workflow for creating Spotify playlists.
+  show: true
+  featured: false
+  order: 4
+  tags: [Next.js, TypeScript, Tailwind CSS, PostgreSQL, Spotify API, OAuth, Docker]
+  image: ""
+  image_alt: ""
+  demo_url: ""
+  project_slug: moodmix
+
+- repo: KrishnaVarun02/worklens
+  title: WorkLens
+  description: A self-hosted application that connects engineering work evidence, skills, and company roadmaps through explainable metrics and human review.
+  show: true
+  featured: false
+  order: 5
+  tags: [Python, Django, React, TypeScript, PostgreSQL, Docker, Jira, Bitbucket, Confluence]
+  image: ""
+  image_alt: ""
+  demo_url: ""
+  project_slug: worklens

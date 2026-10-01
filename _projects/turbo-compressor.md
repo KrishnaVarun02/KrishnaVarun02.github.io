@@ -12,7 +12,7 @@ supervisors: [Prof. Dr. Bhaskar Biswas]
 tags: [C++, Huffman coding, Data structures, Object-oriented programming, CLI]
 image: ''
 image_alt: ''
-repository_url: ''
+repository_url: 'https://github.com/KrishnaVarun02/Turbo-Compressor'
 demo_url: ''
 ---
 

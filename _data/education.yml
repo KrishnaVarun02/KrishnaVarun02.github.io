@@ -27,19 +27,61 @@ skills:
   - category: AI and research methods
     items: [LLM agents, RAG, Multi-agent systems, Reinforcement learning, LSTM, GRU, DBSCAN]
 
-courses:
-  - Data Structures
-  - Computer Programming
-  - Object Oriented Programming
-  - Operating Systems
-  - Computer Networks
-  - Database Management Systems
-  - Artificial Intelligence
-  - Digital Logic and Design
-  - Computer Graphics
-  - Computer Architecture
-  - Probability and Statistics
-  - Discrete Mathematics
-  - Software Engineering
-  - Distributed Systems
-  - Machine Learning Fundamentals
+
+# Selected coursework relevant to software engineering and AI.
+# Transcript course names/codes are preserved; selection does not list every course taken.
+# Transcript grades, IDs, and the document itself are not included.
+coursework:
+  - category: Software and systems
+    source: transcript
+    items:
+      - name: Data Structures
+        codes: [CSO-102]
+      - name: Algorithms
+        codes: [CSO-221]
+      - name: Operating Systems
+        codes: [CSO-231]
+      - name: Database Management System
+        codes: [CSE-361]
+      - name: Computer Networks
+        codes: [CSE-433]
+      - name: Software Engineering
+        codes: [CSE-381]
+      - name: Compiler Design
+        codes: [CSE-425]
+      - name: Computer Architecture
+        codes: [CSE-312]
+  - category: Artificial intelligence
+    source: transcript
+    items:
+      - name: Artificial Intelligence
+        codes: [CSE-241, EC-422]
+      - name: Intelligent Computing
+        codes: [CSE-342]
+      - name: Soft Computing
+        codes: [CSE-458]
+  - category: Mathematical and theoretical foundations
+    source: transcript
+    items:
+      - name: Probability and Statistics
+        codes: [MA-202]
+      - name: Discrete Maths
+        codes: [CSO-204]
+      - name: Mathematical Methods
+        codes: [MA-203]
+      - name: Operations Research
+        codes: [CSE-324]
+      - name: Game Theory
+        codes: [CSO-445]
+      - name: Theory of Computation
+        codes: [CSO-322]
+  - category: Additional software and AI coursework from my resume
+    source: resume
+    note: These subjects are listed in my resume; their titles are not separately listed in the transcript.
+    items:
+      - name: Object Oriented Programming
+        codes: []
+      - name: Distributed Systems
+        codes: []
+      - name: Machine Learning Fundamentals
+        codes: []
