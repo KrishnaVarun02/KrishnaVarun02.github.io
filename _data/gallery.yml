@@ -20,6 +20,16 @@
   order: 2
   visible: true
 
+- id: boxing
+  image: /images/gallery/boxing.jpg
+  image_alt: Two boxers in red and blue protective gear facing each other in an outdoor boxing ring.
+  caption: In the boxing ring.
+  category: Sport
+  width: 1280
+  height: 853
+  order: 3
+  visible: true
+
 - id: bicycle-volunteering-bengaluru
   image: /images/gallery/bicycle-volunteering-bengaluru.jpg
   image_alt: Volunteers working together to assemble a bicycle at an event in Bengaluru.
@@ -27,7 +37,7 @@
   category: Community and volunteering
   width: 1600
   height: 1200
-  order: 3
+  order: 4
   visible: true
 
 - id: oracle-painting
@@ -37,7 +47,7 @@
   category: Creativity and teamwork
   width: 1600
   height: 1200
-  order: 4
+  order: 5
   visible: true
 
 - id: blood-donation
@@ -47,7 +57,7 @@
   category: Community and volunteering
   width: 1200
   height: 1600
-  order: 5
+  order: 6
   visible: true
 
 - id: with-hc-verma
@@ -57,16 +67,6 @@
   category: People and inspiration
   width: 702
   height: 884
-  order: 6
-  visible: true
-
-- id: boxing
-  image: /images/gallery/boxing.jpg
-  image_alt: Two boxers in red and blue protective gear facing each other in an outdoor boxing ring.
-  caption: In the boxing ring.
-  category: Sport
-  width: 1280
-  height: 853
   order: 7
   visible: true
 
