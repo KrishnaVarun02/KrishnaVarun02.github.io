@@ -1,0 +1,42 @@
+- title: Leadership
+  entries:
+    - title: Oracle FY26 Global Tech Program
+      role: Think Tank team lead · Championship winner
+      period: February 2026
+      id: oracle-global-tech-program
+      bullets:
+        - Led a five-member Think Tank team to architect and pitch technical solutions in a competitive global corporate hackathon setting.
+        - Won the championship trophy, delivering the team's solutions under strict timelines.
+    - title: FMC Weekend, IIT (BHU)
+      role: Publicity Executive
+      id: fmc-weekend
+      bullets:
+        - Led a 25-member team coordinating publicity and outreach for the institute's media festival.
+        - Coordinated outreach across 200+ colleges and contributed to campaigns with 100K+ organic social impressions.
+
+- title: Mentoring
+  entries:
+    - title: Telugu CSE Community, IIT (BHU)
+      role: Lead Mentor
+      id: telugu-cse-community
+      bullets:
+        - Mentored 20+ students in data structures and algorithms, internship preparation, resumes, and placements.
+        - Ran mock interviews and structured problem-solving sessions, and created preparation roadmaps for internships and full-time roles.
+    - title: Gauth Expert
+      role: Advanced Mathematics Subject Matter Expert
+      id: gauth-expert
+      bullets:
+        - Solved 500+ problems across calculus, algebra, probability, and coordinate geometry.
+        - Provided structured, step-by-step explanations.
+
+- title: Extracurricular activities
+  id: extracurricular-activities
+  entries:
+    - title: Boxing
+      id: boxing
+      bullets:
+        - Won a gold medal at Spardha 2022, IIT (BHU)'s annual inter-collegiate sports festival.
+    - title: Running
+      id: running
+      bullets:
+        - Completed a 10 km run organized for Cancer Awareness.

@@ -1,0 +1,86 @@
+institutions:
+  - name: IIT (BHU), Varanasi
+    qualification: B.Tech in Computer Science and Engineering
+    period: July 2021–May 2025
+    result: CPI 8.46/10
+    order: 1
+    visible: true
+  - name: Sri Chaitanya Junior College, Vijayawada
+    qualification: Higher Secondary
+    board: Andhra Pradesh State Board of Intermediate Education
+    period: June 2019–July 2021
+    result: 96.6%
+    order: 2
+    visible: true
+
+skills:
+  - category: Languages
+    items: [C++, Java, Python, SQL, C]
+  - category: Frameworks and libraries
+    items: [LangGraph, LangChain, Spring Boot, Django, Pydantic, TestNG, Pytest, PySpark]
+  - category: Cloud and platforms
+    items: [Oracle Cloud Infrastructure, Hyperledger Fabric, Docker, Kubernetes]
+  - category: Data systems
+    items: [Kafka, Kafka Connect, Debezium, PostgreSQL, MySQL, SQLite]
+  - category: Developer tools
+    items: [Git, GitHub, GitHub API, Bitbucket, Postman, OpenRouter, Codex, Lumberjack]
+  - category: AI and research methods
+    items: [LLM agents, RAG, Multi-agent systems, Reinforcement learning, LSTM, GRU, DBSCAN]
+
+
+# Selected coursework relevant to software engineering and AI.
+# Transcript course names/codes are preserved; selection does not list every course taken.
+# Transcript grades, IDs, and the document itself are not included.
+coursework:
+  - category: Software and systems
+    source: transcript
+    items:
+      - name: Data Structures
+        codes: [CSO-102]
+      - name: Algorithms
+        codes: [CSO-221]
+      - name: Operating Systems
+        codes: [CSO-231]
+      - name: Database Management System
+        codes: [CSE-361]
+      - name: Computer Networks
+        codes: [CSE-433]
+      - name: Software Engineering
+        codes: [CSE-381]
+      - name: Compiler Design
+        codes: [CSE-425]
+      - name: Computer Architecture
+        codes: [CSE-312]
+  - category: Artificial intelligence
+    source: transcript
+    items:
+      - name: Artificial Intelligence
+        codes: [CSE-241, EC-422]
+      - name: Intelligent Computing
+        codes: [CSE-342]
+      - name: Soft Computing
+        codes: [CSE-458]
+  - category: Mathematical and theoretical foundations
+    source: transcript
+    items:
+      - name: Probability and Statistics
+        codes: [MA-202]
+      - name: Discrete Maths
+        codes: [CSO-204]
+      - name: Mathematical Methods
+        codes: [MA-203]
+      - name: Operations Research
+        codes: [CSE-324]
+      - name: Game Theory
+        codes: [CSO-445]
+      - name: Theory of Computation
+        codes: [CSO-322]
+  - category: Additional software and AI coursework
+    source: resume
+    items:
+      - name: Object Oriented Programming
+        codes: []
+      - name: Distributed Systems
+        codes: []
+      - name: Machine Learning Fundamentals
+        codes: []

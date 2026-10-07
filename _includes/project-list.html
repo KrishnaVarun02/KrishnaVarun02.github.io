@@ -1,0 +1,63 @@
+{%- comment -%}
+  Only explicitly selected repositories enter this list. A published authored
+  project mapped by project_slug is represented once, in the repository section.
+  A mapping to a hidden or missing project is a standalone repository entry.
+  Where duplicate records map to one project, the first in display order wins.
+{%- endcomment -%}
+{%- assign authored_projects = site.projects | where_exp: "project", "project.published != false" | sort: "order" -%}
+{%- assign authored_featured = authored_projects | where_exp: "project", "project.featured == true" -%}
+{%- assign authored_other = authored_projects | where_exp: "project", "project.featured != true" -%}
+{%- assign authored_projects = authored_featured | concat: authored_other -%}
+{%- assign selected_repos = site.data.project_repos | where_exp: "repository", "repository.show == true" | sort: "order" -%}
+{%- assign selected_featured = selected_repos | where_exp: "repository", "repository.featured == true" -%}
+{%- assign selected_other = selected_repos | where_exp: "repository", "repository.featured != true" -%}
+{%- assign selected_repos = selected_featured | concat: selected_other -%}
+
+<div class="project-list">
+{% for project in authored_projects %}
+  {% assign authored_slug = project.project_slug | default: project.slug %}
+  {% assign mapped_repos = selected_repos | where: "project_slug", authored_slug %}
+  {% if mapped_repos.size == 0 %}
+    {% include project-entry.html project=project kind="authored" %}
+  {% endif %}
+{% endfor %}
+</div>
+
+{% if selected_repos.size > 0 %}
+<section class="repository-showcase" aria-labelledby="selected-github-repositories">
+  <h2 id="selected-github-repositories">Selected GitHub Repositories</h2>
+  {% assign displayed_project_keys = "" %}
+  {% assign displayed_repository_keys = "" %}
+  {% for repository in selected_repos %}
+    {% assign mapped_project = nil %}
+    {% assign repository_slug = repository.project_slug | default: "" | strip %}
+    {% if repository_slug != "" %}
+      {% assign mapped_project = authored_projects | where: "project_slug", repository_slug | first %}
+      {% unless mapped_project %}
+        {% assign mapped_project = authored_projects | where: "slug", repository_slug | first %}
+      {% endunless %}
+    {% endif %}
+    {% capture project_key %}|project:{{ mapped_project.url }}|{% endcapture %}
+    {% assign repository_name = repository.repo | default: "" | strip %}
+    {% capture repository_key %}|repo:{{ repository_name }}|{% endcapture %}
+    {% assign already_displayed = false %}
+    {% if mapped_project and displayed_project_keys contains project_key %}
+      {% assign already_displayed = true %}
+    {% endif %}
+    {% unless mapped_project %}
+      {% if repository_name != "" and displayed_repository_keys contains repository_key %}
+        {% assign already_displayed = true %}
+      {% endif %}
+    {% endunless %}
+    {% unless already_displayed %}
+      {% include project-entry.html project=mapped_project repo=repository kind="repository" %}
+      {% if mapped_project %}
+        {% assign displayed_project_keys = displayed_project_keys | append: project_key %}
+      {% endif %}
+      {% if repository_name != "" %}
+        {% assign displayed_repository_keys = displayed_repository_keys | append: repository_key %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+</section>
+{% endif %}

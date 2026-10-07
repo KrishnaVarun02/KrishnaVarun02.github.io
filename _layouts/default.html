@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% capture document_title %}{% if page.url != '/' and page.title %}{{ page.title }} | {% endif %}{{ site.author.name }}{% endcapture %}
+    {% assign description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines %}
+    <title>{{ document_title | strip | escape }}</title>
+    <meta name="description" content="{{ description | escape }}">
+    <meta name="author" content="{{ site.author.name | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="{{ site.author.name | escape }}">
+    <meta property="og:title" content="{{ document_title | strip | escape }}">
+    <meta property="og:description" content="{{ description | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+    <script src="{{ '/assets/js/navigation.js' | relative_url }}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{{ site.data.ui.skip }}</a>
+    {% include masthead.html %}
+    {{ content }}
+    {% include footer.html %}
+  </body>
+</html>

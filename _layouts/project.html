@@ -1,0 +1,45 @@
+---
+layout: single
+---
+{% assign project_github = page.repository_url | default: "" | strip %}
+{% assign project_demo = page.demo_url | default: "" | strip %}
+{% assign project_slug = page.project_slug | default: page.slug %}
+{% assign mapped_repositories = site.data.project_repos | where_exp: "repository", "repository.show == true" | where: "project_slug", project_slug | sort: "order" %}
+{% assign mapped_featured = mapped_repositories | where_exp: "repository", "repository.featured == true" %}
+{% assign mapped_other = mapped_repositories | where_exp: "repository", "repository.featured != true" %}
+{% assign mapped_repository = mapped_featured | concat: mapped_other | first %}
+{% assign mapped_repository_name = mapped_repository.repo | default: "" | strip %}
+{% if mapped_repository_name != "" %}{% assign project_github = "https://github.com/" | append: mapped_repository_name %}{% endif %}
+{% assign project_demo = mapped_repository.demo_url | default: project_demo | default: "" | strip %}
+{% assign project_image = mapped_repository.image | default: page.image | default: "" | strip %}
+{% assign project_image_alt = mapped_repository.image_alt | default: page.image_alt %}
+{% assign project_image_file = nil %}
+{% if project_image != "" %}
+  {% assign image_first_character = project_image | slice: 0, 1 %}
+  {% if image_first_character != "/" %}{% assign project_image = "/" | append: project_image %}{% endif %}
+  {% assign project_image_file = site.static_files | where: "path", project_image | first %}
+{% endif %}
+
+{% if page.subtitle and page.subtitle != "" %}<p class="project-entry__subtitle">{{ page.subtitle | escape }}</p>{% endif %}
+{% if page.supervisors.size > 0 %}<p class="project-entry__meta"><strong>Supervision:</strong> {{ page.supervisors | join: "; " | escape }}</p>{% endif %}
+{% if page.project_date and page.project_date != "" %}<p class="project-entry__meta">{{ page.project_date | escape }}</p>{% endif %}
+{% if page.tags.size > 0 %}
+<ul class="project-tags" aria-label="Technologies">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>
+{% endif %}
+{% if project_github != "" or project_demo != "" %}
+<p class="project-entry__links">
+  {% if project_github != "" %}<a href="{{ project_github | escape }}">View on GitHub</a>{% endif %}
+  {% if project_demo != "" %}<a href="{% if project_demo contains '://' %}{{ project_demo | escape }}{% else %}{{ project_demo | relative_url }}{% endif %}">View demo</a>{% endif %}
+</p>
+{% endif %}
+{% if project_image_file %}
+<img class="project-entry__image" src="{{ project_image | relative_url }}" alt="{% if project_image_alt and project_image_alt != '' %}{{ project_image_alt | escape }}{% else %}Screenshot of {{ page.title | escape }}{% endif %}">
+{% endif %}
+
+{{ content }}
+
+{% if page.collection == 'education_projects' %}
+<p class="back-link"><a href="{{ '/education/#education-projects' | relative_url }}">&larr; Education projects</a></p>
+{% else %}
+<p class="back-link"><a href="{{ '/projects/' | relative_url }}">&larr; All projects</a></p>
+{% endif %}

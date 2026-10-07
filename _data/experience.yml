@@ -1,0 +1,61 @@
+# Dates and source title variants are kept explicitly; these are two jobs total.
+- employer: Oracle
+  title: Software Engineer
+  source_titles:
+    - Platform Software Engineer -1
+    - Software Development Engineer (Cloud & AI Infrastructure)
+  location: Bengaluru, India
+  period: July 2025–Present
+  order: 1
+  visible: true
+  groups:
+    - title: AI and cloud diagnostics
+      bullets:
+        - Built an agentic root cause analysis system using LLMs, retrieval-augmented generation (RAG) pipelines, and vector databases for cloud diagnostics.
+        - Automated distributed log analysis and failure localization, reducing manual debugging effort by 30%.
+        - Developed GenAI tooling for contextual retrieval of enterprise operational knowledge, alongside infrastructure automation and monitoring workflows.
+    - title: Blockchain platform engineering and testing
+      bullets:
+        - Engineered AI-assisted test automation covering 300+ Oracle Blockchain Platform APIs.
+        - Used Codex and LangChain workflows to translate requirements into Java/TestNG test designs, generate scaffolds, improve assertions, analyze failures, and extend reusable test utilities.
+        - Built a reusable end-to-end Hyperledger Fabric API testing framework covering request construction, response validation, transaction-state verification, assertions, and diagnostic reporting.
+        - Automated seven chaincode asset-lifecycle workflows covering minting, transfers, approvals, holds, burns, balance checks, and transaction-history verification.
+        - Designed and executed 40+ regression scenarios across 10 platform areas, including wrapper APIs, console APIs, and chaincode lifecycle.
+  technologies:
+    - OCI
+    - Hyperledger Fabric
+    - Java
+    - TestNG
+    - Codex
+    - LangChain
+    - Lumberjack
+    - LLMs
+    - RAG
+    - Vector databases
+
+- employer: Simpl Pay (BNPL)
+  title: Data Engineer Intern
+  source_titles:
+    - Data Engineer Intern
+    - Data Engineering Intern
+  location: Bengaluru, India
+  period: June–July 2024
+  order: 2
+  visible: true
+  groups:
+    - title: Real-time data infrastructure
+      bullets:
+        - Replaced a once-daily database snapshot job with a real-time change data capture (CDC) pipeline, shifting synchronization from 24-hour batch cycles to continuous event streaming.
+        - Deployed Debezium on Kafka Connect and configured PostgreSQL source connectors to capture row-level inserts, updates, and deletes and publish change events to Kafka topics.
+        - Integrated Kafka Connect with Kafka brokers to deliver reliable, low-latency database change events, improving data freshness for downstream systems and eliminating reliance on full daily snapshots.
+  technologies:
+    - Apache Kafka
+    - Kafka Connect
+    - Debezium
+    - PostgreSQL
+    - Change Data Capture (CDC)
+    - Real-time data streaming
+    - Event-driven architecture
+    - Database synchronization
+    - Data pipelines
+    - Distributed systems

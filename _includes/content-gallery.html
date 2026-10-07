@@ -1,0 +1,15 @@
+{% assign gallery_entries = site.data.gallery | sort: 'order' %}
+{% capture gallery_images %}
+  {% for entry in gallery_entries %}
+    {% include gallery-figure.html entry=entry %}
+  {% endfor %}
+{% endcapture %}
+{% assign gallery_images = gallery_images | strip %}
+{% if gallery_images != '' %}
+  <div class="gallery-grid">{{ gallery_images }}</div>
+{% else %}
+  <div class="empty-state">
+    <h2>Photos coming soon</h2>
+    <p>A space for moments from work, campus, and life beyond engineering.</p>
+  </div>
+{% endif %}

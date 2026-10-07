@@ -1,0 +1,31 @@
+---
+layout: single
+---
+{% assign research_repository = page.repository_url | default: "" | strip %}
+{% assign research_demo = page.demo_url | default: "" | strip %}
+{% assign research_image = page.image | default: "" | strip %}
+{% assign research_image_file = nil %}
+{% if research_image != "" %}
+  {% assign image_first_character = research_image | slice: 0, 1 %}
+  {% if image_first_character != "/" %}{% assign research_image = "/" | append: research_image %}{% endif %}
+  {% assign research_image_file = site.static_files | where: "path", research_image | first %}
+{% endif %}
+{% if page.subtitle and page.subtitle != "" %}<p class="project-entry__subtitle">{{ page.subtitle | escape }}</p>{% endif %}
+{% if page.research_date and page.research_date != "" %}<p class="project-entry__meta">{{ page.research_date | escape }}</p>{% endif %}
+{% if page.supervisors.size > 0 %}<p class="project-entry__meta"><strong>Supervision:</strong> {{ page.supervisors | join: "; " | escape }}</p>{% endif %}
+{% if page.tags.size > 0 %}
+<ul class="project-tags" aria-label="Research methods and technologies">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>
+{% endif %}
+{% if research_repository != "" or research_demo != "" %}
+<p class="project-entry__links">
+  {% if research_repository != "" %}<a href="{{ research_repository | escape }}">View on GitHub</a>{% endif %}
+  {% if research_demo != "" %}<a href="{% if research_demo contains '://' %}{{ research_demo | escape }}{% else %}{{ research_demo | relative_url }}{% endif %}">View demo</a>{% endif %}
+</p>
+{% endif %}
+{% if research_image_file %}
+<img class="project-entry__image" src="{{ research_image | relative_url }}" alt="{% if page.image_alt and page.image_alt != '' %}{{ page.image_alt | escape }}{% else %}Illustration for {{ page.title | escape }}{% endif %}">
+{% endif %}
+
+{{ content }}
+
+<p class="back-link"><a href="{{ '/research/' | relative_url }}">&larr; All research</a></p>

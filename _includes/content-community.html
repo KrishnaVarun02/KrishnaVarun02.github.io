@@ -1,0 +1,12 @@
+{% for section in site.data.community %}
+<section class="content-section">
+  <h2 id="{{ section.id | default: section.title | slugify }}">{{ section.title | escape }}</h2>
+  {% for entry in section.entries %}
+  <div class="content-entry"{% if entry.id %} id="{{ entry.id | escape }}"{% endif %}>
+    <h3>{{ entry.title | escape }}</h3>
+    {% if entry.role or entry.period %}<p class="entry-meta">{{ entry.role | escape }}{% if entry.role and entry.period %} · {% endif %}{{ entry.period | escape }}</p>{% endif %}
+    <ul>{% for item in entry.bullets %}<li>{{ item | escape }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}

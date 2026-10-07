@@ -1,0 +1,19 @@
+main:
+  - title: Experience
+    url: /experience/
+  - title: Research
+    url: /research/
+  - title: Projects
+    url: /projects/
+  - title: Education
+    url: /education/
+  - title: CV
+    url: /cv/
+  - title: Gallery
+    url: /gallery/
+  - title: Achievements
+    url: /achievements/
+  - title: Community
+    url: /community/
+  - title: Contact
+    url: /contact/

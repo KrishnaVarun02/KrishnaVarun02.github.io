@@ -1,0 +1,102 @@
+# Identity: edit the display name here; every page uses author.name.
+locale: en-IN
+url: "https://krishnavarun02.github.io"
+baseurl: ""
+repository: "KrishnaVarun02/KrishnaVarun02.github.io"
+description: "Software engineer at Oracle and IIT (BHU) CSE alumnus, working across AI agents, cloud infrastructure, data engineering, and machine learning research."
+author:
+  name: "Varun Kasamneni"
+  full_name: "Krishna Varun Kasamneni"
+  initials: "VK"
+  bio: "Software Engineer at Oracle | IIT (BHU) CSE alumnus."
+  affiliation: "Oracle · IIT (BHU)"
+  location: "Bengaluru, India"
+  avatar: "/images/profile.jpg"
+  avatar_alt: "Varun Kasamneni in a beige coat and white T-shirt"
+  avatar_position: "50% 0%" # CSS framing within the circular profile area.
+  email: "kasamnenivarun@gmail.com"
+  github: "https://github.com/KrishnaVarun02"
+  repositories: "https://github.com/KrishnaVarun02?tab=repositories"
+  linkedin: "https://www.linkedin.com/in/krishna-varun-kasamneni-4106a324a"
+  phone: "+91 9949686580"
+  show_phone: false
+resumes:
+  - label: "Software Engineering Resume"
+    path: "/files/software-engineering-resume.pdf"
+  - label: "Research CV"
+    path: "/files/research-cv.pdf"
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: Asia/Kolkata
+include:
+  - _pages
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  research:
+    output: true
+    permalink: /research/:name/
+  education_projects:
+    output: true
+    permalink: /education/projects/:name/
+  publications:
+    output: true
+    permalink: /research/publications/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      published: true
+      featured: false
+      order: 100
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+      published: true
+      order: 100
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      published: false
+  - scope:
+      path: ""
+      type: education_projects
+    values:
+      layout: education_project
+      published: true
+      order: 100
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins: []
+exclude:
+  - _site-project
+  - README.md
+  - CONTENT_NOTES.md
+  - VERIFICATION.md
+  - THIRD_PARTY_NOTICES.md
+  - LICENSE
+  - licenses
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - .bundle
+  - .gitignore
+  - .ruby-version
+  - node_modules
+  - package.json
+  - package-lock.json

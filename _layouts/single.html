@@ -1,0 +1,13 @@
+---
+layout: default
+---
+{% comment %}Adapted from AcademicPages / Minimal Mistakes single layout. See LICENSE.{% endcomment %}
+<div id="main">
+  {% include author-profile.html %}
+  <main id="content" class="page" tabindex="-1">
+    <article class="page__inner-wrap">
+      <header><h1 class="page__title">{{ page.title | escape }}</h1></header>
+      <div class="page__content">{{ content }}</div>
+    </article>
+  </main>
+</div>

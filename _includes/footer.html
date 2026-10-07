@@ -1,0 +1,11 @@
+<div class="page__footer">
+  <footer>
+    <nav aria-label="Footer navigation" class="footer-links">
+      <a href="{{ '/contact/' | relative_url }}">{{ site.data.ui.contact }}</a>
+      <a href="{{ '/cv/' | relative_url }}">{{ site.data.ui.cv }}</a>
+      {% assign footer_github = site.author.github | default: '' | strip %}
+      {% if footer_github != '' %}<a href="{{ footer_github | escape }}">{{ site.data.ui.github }}</a>{% endif %}
+    </nav>
+    <div class="page__footer-copyright">© {{ site.time | date: '%Y' }} {{ site.author.name | escape }}. Powered by <a href="https://jekyllrb.com/">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/">Minimal Mistakes</a>.</div>
+  </footer>
+</div>

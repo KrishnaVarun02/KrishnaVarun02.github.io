@@ -1,0 +1,38 @@
+<h2>Education</h2>
+{% assign institutions = site.data.education.institutions | sort: 'order' %}
+{% for institution in institutions %}
+  {% unless institution.visible == false %}
+  <section class="content-entry">
+    <h3>{{ institution.name | escape }}</h3>
+    <p>{{ institution.qualification | escape }}{% if institution.board %}<br>{{ institution.board | escape }}{% endif %}</p>
+    <p class="entry-meta">{{ institution.period | escape }} · {{ institution.result | escape }}</p>
+  </section>
+  {% endunless %}
+{% endfor %}
+{% assign education_repositories = site.data.education_repos | where_exp: 'repository', 'repository.show == true' | sort: 'order' %}
+{% if education_repositories.size > 0 %}
+<h2 id="education-projects">Course work projects</h2>
+<div class="education-projects">
+{% for repository in education_repositories %}
+  {% assign education_project = site.projects | where: 'url', repository.project_url | where_exp: 'project', 'project.published == true' | first %}
+  {% unless education_project %}{% assign education_project = site.education_projects | where: 'url', repository.project_url | where_exp: 'project', 'project.published == true' | first %}{% endunless %}
+  {% include project-entry.html repo=repository project=education_project kind='education' %}
+{% endfor %}
+</div>
+{% endif %}
+{% include more-repositories.html %}
+<h2>Skills</h2>
+<dl class="skills-list">
+{% for skill in site.data.education.skills %}
+  <dt>{{ skill.category | escape }}</dt>
+  <dd>{{ skill.items | join: ', ' | escape }}</dd>
+{% endfor %}
+</dl>
+<h2>Relevant coursework</h2>
+{% for group in site.data.education.coursework %}
+<h3>{{ group.category | escape }}</h3>
+{% if group.note and group.note != '' %}<p class="entry-meta">{{ group.note | escape }}</p>{% endif %}
+<ul class="course-list">
+{% for course in group.items %}<li>{{ course.name | escape }}{% if course.codes.size > 0 %} <span class="entry-meta">({{ course.codes | join: ', ' | escape }})</span>{% endif %}</li>{% endfor %}
+</ul>
+{% endfor %}

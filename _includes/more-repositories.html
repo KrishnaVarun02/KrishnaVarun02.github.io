@@ -1,0 +1,2 @@
+{% assign all_repositories_url = site.author.repositories | default: '' | strip %}
+{% if all_repositories_url != '' %}<p class="more-repositories"><a href="{{ all_repositories_url | escape }}">Show more on GitHub <span aria-hidden="true">→</span></a></p>{% endif %}

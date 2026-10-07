@@ -1,0 +1,33 @@
+<aside class="sidebar" aria-label="{{ site.data.ui.profile_label }}">
+  {% assign author_avatar = site.author.avatar | default: '' | strip %}
+  {% assign author_bio = site.author.bio | default: '' | strip %}
+  {% assign author_affiliation = site.author.affiliation | default: '' | strip %}
+  {% assign author_location = site.author.location | default: '' | strip %}
+  {% assign author_email = site.author.email | default: '' | strip %}
+  {% assign author_github = site.author.github | default: '' | strip %}
+  {% assign author_linkedin = site.author.linkedin | default: '' | strip %}
+  {% assign author_phone = site.author.phone | default: '' | strip %}
+  {% assign author_avatar_alt = site.author.avatar_alt | default: '' | strip %}
+  {% if author_avatar_alt == '' %}{% capture author_avatar_alt %}Portrait of {{ site.author.name }}{% endcapture %}{% endif %}
+  {% assign avatar_path = author_avatar | prepend: '/' | replace: '//', '/' %}
+  {% assign avatar_file = site.static_files | where: 'path', avatar_path | first %}
+  <div class="author__avatar">
+    {% if author_avatar != '' and avatar_file %}
+    <img src="{{ avatar_path | relative_url }}" alt="{{ author_avatar_alt | escape }}" width="165" height="165" style="object-position: {{ site.author.avatar_position | default: '50% 50%' | escape }};">
+    {% else %}
+    <div class="initials-avatar" role="img" aria-label="{{ site.author.name | escape }} initials">{{ site.author.initials | escape }}</div>
+    {% endif %}
+  </div>
+  <div class="author__content">
+    <h2 class="author__name">{{ site.author.name | escape }}</h2>
+    {% if author_bio != '' %}<p class="author__bio">{{ author_bio | escape }}</p>{% endif %}
+  </div>
+  <ul class="author__urls">
+    {% if author_affiliation != '' %}<li>{% include icon.html name='building' %}<span>{{ author_affiliation | escape }}</span></li>{% endif %}
+    {% if author_location != '' %}<li>{% include icon.html name='location' %}<span>{{ author_location | escape }}</span></li>{% endif %}
+    {% if author_email != '' %}<li><a href="mailto:{{ author_email | escape }}">{% include icon.html name='email' %}{{ site.data.ui.email }}</a></li>{% endif %}
+    {% if author_github != '' %}<li><a href="{{ author_github | escape }}" rel="me">{% include icon.html name='github' %}{{ site.data.ui.github }}</a></li>{% endif %}
+    {% if author_linkedin != '' %}<li><a href="{{ author_linkedin | escape }}" rel="me">{% include icon.html name='linkedin' %}{{ site.data.ui.linkedin }}</a></li>{% endif %}
+    {% if site.author.show_phone == true and author_phone != '' %}<li><a href="tel:{{ author_phone | remove: ' ' | escape }}">{% include icon.html name='phone' %}{{ author_phone | escape }}</a></li>{% endif %}
+  </ul>
+</aside>

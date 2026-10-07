@@ -1,0 +1,81 @@
+# Upload your own images to images/gallery/ and add metadata here.
+# The README contains a copyable entry. Empty or missing images are never rendered.
+- id: oracle-think-tank
+  image: /images/gallery/oracle-think-tank.jpg
+  image_alt: The Oracle Think Tank team on stage in front of the Realm of Thought presentation.
+  caption: "Oracle Think Tank achievement — on stage with the team for Realm of Thought."
+  category: Work and achievements
+  width: 1200
+  height: 1600
+  order: 1
+  visible: true
+
+- id: iit-bhu-convocation
+  image: /images/gallery/iit-bhu-convocation.jpg
+  image_alt: Receiving a degree on stage at the IIT (BHU) convocation ceremony.
+  caption: Convocation at IIT (BHU), Varanasi.
+  category: Campus milestones
+  width: 1000
+  height: 750
+  order: 2
+  visible: true
+
+- id: boxing
+  image: /images/gallery/boxing.jpg
+  image_alt: Two boxers in red and blue protective gear facing each other in an outdoor boxing ring.
+  caption: In the boxing ring.
+  category: Sport
+  width: 1280
+  height: 853
+  order: 3
+  visible: true
+
+- id: bicycle-volunteering-bengaluru
+  image: /images/gallery/bicycle-volunteering-bengaluru.jpg
+  image_alt: Volunteers working together to assemble a bicycle at an event in Bengaluru.
+  caption: Volunteering at a bicycle-building event in Bengaluru to support children from underprivileged backgrounds.
+  category: Community and volunteering
+  width: 1600
+  height: 1200
+  order: 4
+  visible: true
+
+- id: oracle-painting
+  image: /images/gallery/oracle-painting.jpg
+  image_alt: Participants holding their colorful paintings during a group activity at Oracle.
+  caption: Participating in a painting event at Oracle.
+  category: Creativity and teamwork
+  width: 1600
+  height: 1200
+  order: 5
+  visible: true
+
+- id: blood-donation
+  image: /images/gallery/blood-donation.jpg
+  image_alt: Three participants posing together at a blood donation camp's photo frame.
+  caption: At a blood donation camp.
+  category: Community and volunteering
+  width: 1200
+  height: 1600
+  order: 6
+  visible: true
+
+- id: with-hc-verma
+  image: /images/gallery/with-hc-verma.png
+  image_alt: Varun standing with Prof. H. C. Verma outdoors.
+  caption: With Prof. H. C. Verma, a physics educator I admire.
+  category: People and inspiration
+  width: 702
+  height: 884
+  order: 7
+  visible: true
+
+- id: outside-work
+  image: /images/gallery/outside-work.jpg
+  image_alt: Varun in an orange polo shirt beside an indoor balcony.
+  caption: A moment outside work.
+  category: Everyday life
+  width: 1079
+  height: 1440
+  order: 8
+  visible: true

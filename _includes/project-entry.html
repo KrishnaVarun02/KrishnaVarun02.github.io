@@ -1,0 +1,48 @@
+{%- assign entry_title = include.repo.title | default: include.project.title | default: include.repo.repo -%}
+{%- assign entry_description = include.repo.description | default: include.project.excerpt -%}
+{%- assign entry_tags = include.repo.tags | default: include.project.tags -%}
+{%- assign entry_image = include.repo.image | default: include.project.image | default: "" | strip -%}
+{%- assign entry_image_alt = include.repo.image_alt | default: include.project.image_alt -%}
+{%- assign entry_demo = include.repo.demo_url | default: include.project.demo_url | default: "" | strip -%}
+{%- assign entry_github = include.project.repository_url | default: "" | strip -%}
+{%- assign entry_repo_name = include.repo.repo | default: "" | strip -%}
+{%- assign entry_featured = include.project.featured -%}
+{%- assign entry_heading_level = 2 -%}
+{%- if include.repo -%}
+  {%- assign entry_featured = include.repo.featured -%}
+  {%- assign entry_heading_level = 3 -%}
+{%- endif -%}
+{%- if entry_repo_name != "" -%}
+  {%- assign entry_github = "https://github.com/" | append: entry_repo_name -%}
+{%- endif -%}
+{%- assign entry_image_file = nil -%}
+{%- if entry_image != "" -%}
+  {%- assign image_first_character = entry_image | slice: 0, 1 -%}
+  {%- if image_first_character != "/" -%}
+    {%- assign entry_image = "/" | append: entry_image -%}
+  {%- endif -%}
+  {%- assign entry_image_file = site.static_files | where: "path", entry_image | first -%}
+{%- endif -%}
+
+<article class="project-entry" data-project-kind="{{ include.kind }}"{% if include.project %} data-project-slug="{{ include.project.project_slug | default: include.project.slug | escape }}"{% endif %}{% if entry_repo_name != "" %} data-repository="{{ entry_repo_name | escape }}"{% endif %}>
+  <h{{ entry_heading_level }} class="project-entry__title">
+    {% if include.project %}<a href="{{ include.project.url | relative_url }}">{{ entry_title | escape }}</a>{% elsif entry_github != "" %}<a href="{{ entry_github | escape }}">{{ entry_title | escape }}</a>{% else %}{{ entry_title | escape }}{% endif %}
+  </h{{ entry_heading_level }}>
+  {% if entry_featured == true %}<p class="project-entry__meta">Featured project</p>{% endif %}
+  {% if entry_image_file %}
+  <img class="project-entry__image" src="{{ entry_image | relative_url }}" alt="{% if entry_image_alt and entry_image_alt != '' %}{{ entry_image_alt | escape }}{% else %}Screenshot of {{ entry_title | escape }}{% endif %}" loading="lazy">
+  {% endif %}
+  {% if entry_description and entry_description != "" %}<div class="project-entry__description">{{ entry_description | markdownify }}</div>{% endif %}
+  {% if entry_tags.size > 0 %}
+  <ul class="project-tags" aria-label="Technologies">
+    {% for tag in entry_tags %}<li>{{ tag | escape }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if include.project or entry_github != "" or entry_demo != "" %}
+  <p class="project-entry__links">
+    {% if include.project %}<a href="{{ include.project.url | relative_url }}">Project details<span class="visually-hidden">: {{ entry_title | escape }}</span></a>{% endif %}
+    {% if entry_github != "" %}<a href="{{ entry_github | escape }}">GitHub<span class="visually-hidden">: {{ entry_title | escape }}</span></a>{% endif %}
+    {% if entry_demo != "" %}<a href="{% if entry_demo contains '://' %}{{ entry_demo | escape }}{% else %}{{ entry_demo | relative_url }}{% endif %}">Demo<span class="visually-hidden">: {{ entry_title | escape }}</span></a>{% endif %}
+  </p>
+  {% endif %}
+</article>
